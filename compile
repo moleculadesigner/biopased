@@ -5,14 +5,13 @@ version=17
 
 echo "start compilation of $exe_name $version"
 
-#rm *.o
 echo "compilation at $(pwd)"
 f95 -c *.f
 
 #linking
-echo "linking  $(pwd)/*.o"
+echo "linking $(pwd)/*.o"
 f95 *.o  -o "$exe_name"
 
 rm *.o
 mv "$exe_name" ../
-echo "compilation  and linking is done! exe: $exe_name"
+echo "compilation and linking is done! exe: $exe_name"
