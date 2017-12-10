@@ -1,0 +1,222 @@
+# TEST1:
+# directory ./t1 shows example of restoring Hydrogen atoms, energy optimization and molDyn equilibration
+
+We have PDB file whithout Hydrogen atoms
+
+Job1:
+1) add Hyrdogen atoms
+2) make energy optimization
+3) make molDynamics equilibration      
+
+command parameter file:
+t1_MdynPar.inp : 
+#234567890123456789012345678901234567890!comment
+$fullProtMD                             !all protein atom are optimized
+$SolvGS                                 !USE Gaussian Solvation Shell Model
+$engCalc                                ! do energy calculation
+$engOptim                               ! do energy Optimization for all atoms
+$nOptStep=10                            ! max N optim steps
+$doMDyn                                 ! do MolDynamics
+$initMDTemp=10.00                       ! initial Temperature in Kelwin
+$bathMDTemp=100.0                       ! thermal bath final Temperature
+$runMDnstep=2000                        ! do 2000 moldyn steps
+$mdTimeStep=0.001                       ! length of mdstep in ps
+$nwtra=200                              ! write snapshot PDB files each 200 md steps
+#END
+
+run the test t1 by command file 
+ > RUNbioPASED.t1.sh
+
+#
+*******************************************************
+#
+# TEST2:  initial PDB file has missing side chain atoms for some residues,
+                                no all Hydrogen atoms
+directory ./t2 show example of restoring missing side chain atoms, add Hydrogens,
+                               energy optimization and moldyn equilibration
+Job2:
+1) program AUTOMATICALLY adds all missing side chain atoms
+2) add Hyrdogen atoms
+3) makes energy optimization
+4) makes molDynamics equilibration 
+
+run test2 by command RUNbioPASED.t2.sh
+
+# program prints on console status of calculations:
+
+ Status: 1 run bioPASED ...
+ Status: 2 run bioPASED ...         missing side chain atoms are added ...
+ Status: 3 run bioPASED ...         H atoms are added ...
+ Status: 4 run bioPASED ...         made molec topology ...
+ Status: 5 run bioPASED ...         made final molec topology ..
+ Status: 6 run bioPASED ...         init ForceField parameters ..
+ Status: 7 run bioPASED ...         init Gauss Shell solvation model ..
+ Status: 8 run bioPASED ...         initialXYZ energy calculation done ...
+ Status: 9 run bioPASED ...         start energyOptimization ...
+ Status: 10 run bioPASED ...         engOptimization step =  1 is done ...
+ Status: 11 run bioPASED ...         engOptimization step =  2 is done ...
+ Status: 12 run bioPASED ...         engOptimization step =  3 is done ...
+ Status: 13 run bioPASED ...         engOptimization step =  4 is done ...
+ Status: 14 run bioPASED ...         engOptimization step =  5 is done ...
+ Status: 15 run bioPASED ...         engOptimization step =  6 is done ...
+ Status: 16 run bioPASED ...         engOptimization step =  7 is done ...
+ Status: 17 run bioPASED ...         engOptimization step =  8 is done ...
+ Status: 18 run bioPASED ...         engOptimization step =  9 is done ...
+ Status: 19 run bioPASED ...         engOptimization step =  10 is done ...
+ Status: 20 run bioPASED ...         energyOpimization is done ...
+ Status: 23 run bioPASED ...         start molDyn run ...
+ Status: 24 run bioPASED ...         mdSnap :  1 is wrote ...
+ Status: 25 run bioPASED ...         mdSnap :  2 is wrote ...
+ Status: 26 run bioPASED ...         mdSnap :  3 is wrote ...
+ Status: 27 run bioPASED ...         mdSnap :  4 is wrote ...
+ Status: 28 run bioPASED ...         mdSnap :  5 is wrote ...
+
+etc ...
+#
+******************************************************
+TEST 3  in ./t3  directory
+
+Job3:
+1) read snapshot pdb file from TEST2 
+2) make energy optimization
+3) restrain positions of ProteinBackBone atoms with harmonic force field
+4) md equilibration
+5) md simulated annealing by protocol in file t3_SAprotocol.inp
+
+test3 is running by command > RUNbioPASED.t3.sh
+
+#files to run test3:
+1) t3_MdynPar.inp:
+#234567890123456789012345678901234567890!comment
+$fullProtMD
+$harmAt1PosRst=0.10                      !harmConst=0.1 (kcal/A^2)
+$Hread
+$shake=2                                 !0/1/2! 2=all bonds are kept fixed
+$SolvGS
+$engCalc
+$engOptim
+$nOptStep=1                              !max N optim steps
+$doMDyn
+$MDSA
+$initMDTemp=10.00
+$bathMDTemp=50.00
+$runMDnstep=500
+$mdTimeStep=0.002
+$nwtra=250
+#END
+----------------
+2) file t3_SAprotocol.inp :
+#SA protocol
+#nSAstep
+4
+#(f10.1,1x,f8.1,1x,3(f6.1,1x)
+#234567890x12345678x123456x123456x123456
+#ntimeMX    tempTg  SCvdW wfHb128BB wfhB128BS
+2000        100.0     1.0    1.0     1.0
+2000        300.0     1.0    1.0     1.0
+2000        100.0     1.0    1.0     1.0
+2000        50.0      1.0    1.0     1.0
+END
+---------
+3) file t3_restrAt1.inp :
+#harmonically restrained RESidue segments
+#xxxxxIIIIiiiiaaAAA
+#(6x,2i4,a40)
+RESTAT   1 263  PBB              !PBB - ProtBackBone atoms are restrained, i.e. sideChain atoms are not
+end                                                                        restrained  
+                                 !ALL - all atoms of residues are restrained
+--------
+*********************************************************
+TEST4 in ./t4 directory
+
+Job4:
+1) read PDB file with H atoms
+2) add positional restraints (harmonic force field) for defined atoms: file t4_restrAt1.inp
+3) make energy optimization and molDyn 
+   for list of residues shown in file t4_moveRes.inp
+4) run simulated annealing via protocol in file: t4_SAprotocol.inp
+
+run TEST4 by command 
+ > RUNbioPASED_t4.sh 
+
+#t4_MdynPar.inp
+#234567890123456789012345678901234567890!comment
+$MovingRes
+$harmAt1PosRst=0.05                      !harmConst (kcal/A^2)
+$Hread
+$shake=2                                 !0/1/2
+$SolvGS                                  ! GauusShell solvation model is ON
+$SolvWbr                                 ! solvent shell water H-bond bridges at-W-at is ON
+$engCalc
+$engOptim
+$nOptStep=1
+$doMDyn
+$MDSA                                    !do SimAnnealing
+$initMDTemp=10.00
+$bathMDTemp=50.00
+$runMDnstep=500
+$mdTimeStep=0.002
+$NTV=1
+$nwtra=250
+#END
+-------------
+#t4_moveRes.inp : 1arb
+aaaaaaIIIIiiii
+#
+MOVRES  91 179
+MOVRES 190 240
+end
+------------
+#t4_restrAt1.inp
+#harmonically restrained RESidue segments
+#xxxxxIIIIiiiiaaAAA
+#(6x,2i4,a40)
+RESTAT   1  63  ALL
+RESTAT  64 179  PBB
+RESTAT 200 250  PBB
+end
+-----------
+#t4_SAprotocol.inp
+#SA protocol
+#nSAstep
+2
+#(f10.1,1x,f8.1,1x,3(f6.1,1x)
+#234567890x12345678x123456x123456x123456
+#ntimeMX    tempTg  SCvdW wfHb128BB wfhB128BS
+2000        200.0     0.8    1.0     1.0
+2000        100.0     1.0    1.0     1.0
+end
+-----------
+test4 out to console:
+> RUNbioPASED_t4.sh
+Status: 1 run bioPASED ...
+ Status: 2 run bioPASED ...         made molec topology ...
+ Status: 3 run bioPASED ...         made final molec topology ..
+ Status: 4 run bioPASED ...         init ForceField parameters ..
+ Status: 5 run bioPASED ...         init Gauss Shell solvation model ..
+ Status: 6 run bioPASED ...         initialXYZ energy calculation done ...
+ Status: 7 run bioPASED ...         start energyOptimization ...
+ Status: 8 run bioPASED ...         engOptimization step =  1 is done ...
+ Status: 9 run bioPASED ...         energyOpimization is done ...
+ Status: 12 run bioPASED ...         start molDyn run ...
+ Status: 13 run bioPASED ...         mdSnap :  1 is wrote ...
+ Status: 14 run bioPASED ...         mdSnap :  2 is wrote ...
+ Status: 15 run bioPASED ...         eqvilibration mDyn is done ...
+ Status: 16 run bioPASED ...         mdSnap :  3 is wrote ...
+ Status: 17 run bioPASED ...         mdSnap :  4 is wrote ...
+ Status: 18 run bioPASED ...         mdSnap :  5 is wrote ...
+ Status: 19 run bioPASED ...         mdSnap :  6 is wrote ...
+ Status: 20 run bioPASED ...         mdSnap :  7 is wrote ...
+ Status: 21 run bioPASED ...         mdSnap :  8 is wrote ...
+ Status: 22 run bioPASED ...         mdSnap :  9 is wrote ...
+ Status: 23 run bioPASED ...         mdSnap :  10 is wrote ...
+ Status: 24 run bioPASED ...         mdSnap :  11 is wrote ...
+ Status: 25 run bioPASED ...         mdSnap :  12 is wrote ...
+ Status: 26 run bioPASED ...         mdSnap :  13 is wrote ...
+ Status: 27 run bioPASED ...         mdSnap :  14 is wrote ...
+ Status: 28 run bioPASED ...         mdSnap :  15 is wrote ...
+ Status: 29 run bioPASED ...         mdSnap :  16 is wrote ...
+ Status: 30 run bioPASED ...         mdSnap :  17 is wrote ...
+ Status: 31 run bioPASED ...         mdSnap :  18 is wrote ...
+ Status: 32 run bioPASED ...         simulated annealing is done ...
+***********************

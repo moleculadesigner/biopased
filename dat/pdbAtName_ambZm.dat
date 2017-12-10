@@ -1,0 +1,79 @@
+#convertor table: Input pdbAtomName -> amberFF atom names
+#23456789012345678901234567890
+#xxxxxxxxxaaaaXaaaa
+#       InPDB  amber
+##RESI:     HIS  HIE             !HIE  minor neutral NE2-H
+##RESI:     HIS  HID             !HID  main neutral ND1-H
+##RESI:     HIS  HIS             ! HIS+
+RESI:     HIS  HIS
+RESI:     HISn HID
+RESI:     HIEn HIE
+RESI:     CYS  CYX
+#
+#     inAtnameEx  Res  outAt=amberAt
+##########aaaattttrrrrxaaaa
+#
+ATOM      O1  CT  ALA  O
+ATOM      O1  CT  GLU  O
+ATOM      O1  CT  GLN  O
+ATOM      O1  CT  ASP  O
+ATOM      O1  CT  ASN  O
+ATOM      O1  CT  LEU  O
+ATOM      O1  CT  GLY  O
+ATOM      O1  CT  LYS  O
+ATOM      O1  CT  SER  O
+ATOM      O1  CT  VAL  O
+ATOM      O1  CT  ARG  O
+ATOM      O1  CT  THR  O
+ATOM      O1  CT  PRO  O
+ATOM      O1  CT  ILE  O
+ATOM      O1  CT  MET  O
+ATOM      O1  CT  PHE  O
+ATOM      O1  CT  TYR  O
+ATOM      O1  CT  CYS  O
+ATOM      O1  CT  CYX  O 
+ATOM      O1  CT  CYM  O
+ATOM      O1  CT  TRP  O
+ATOM      O1  CT  HIS  O
+ATOM      O1  CT  HIE  O
+#2345678901234567890123456789
+ATOM      O2  CT  ALA  OXT
+ATOM      O2  CT  GLU  OXT
+ATOM      O2  CT  GLN  OXT
+ATOM      O2  CT  ASP  OXT
+ATOM      O2  CT  ASN  OXT
+ATOM      O2  CT  LEU  OXT
+ATOM      O2  CT  GLY  OXT
+ATOM      O2  CT  LYS  OXT
+ATOM      O2  CT  SER  OXT
+ATOM      O2  CT  VAL  OXT
+ATOM      O2  CT  ARG  OXT
+ATOM      O2  CT  THR  OXT
+ATOM      O2  CT  PRO  OXT
+ATOM      O2  CT  ILE  OXT
+ATOM      O2  CT  MET  OXT
+ATOM      O2  CT  PHE  OXT
+ATOM      O2  CT  TYR  OXT
+ATOM      O2  CT  CYS  OXT
+ATOM      O2  CT  CYX  OXT
+ATOM      O2  CT  TRP  OXT
+ATOM      O2  CT  HIS  OXT
+ATOM      O2  CT  HIE  OXT
+#
+ATOM:     CD      ILE  CD1
+#  
+ATOM:     CG      THR  CG2
+ATOM:     OG      THR  OG1
+#
+ATOM:     OE      GLN  OE1
+ATOM:     NE      GLN  NE2
+#
+ATOM:     OD      ASN  OD1
+ATOM:     ND      ASN  ND2
+#
+ATOM:     AE1     GLN  OE1
+ATOM:     AE2     GLN  NE2
+ATOM:     AD1     ASN  OD1
+ATOM:     AD2     ASN  ND2 
+#
+end

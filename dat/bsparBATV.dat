@@ -1,0 +1,923 @@
+# CORRECTED!! from original amber94
+# YV corrected bondPar OS-P, OH-P for NA
+#
+#bond , angle , torsional, Improper  parameters
+# H mass = 10.08 is increased by10
+#VDW parameters
+#taken from PARM94 for DNA, RNA and proteins with TIP3P Water. 
+#amber : USE SCEE=1.2 in energy progs
+$ATOMMASS
+BR 79.90                           ! bromine
+F  19.00                           ! fluorine
+C  12.01                             sp2 C carbonyl group 
+CA 12.01                             sp2 C pure aromatic (benzene)
+CB 12.01                             sp2 aromatic C, 5&6 membered ring junction
+CC 12.01                             sp2 aromatic C, 5 memb. ring HIS
+CK 12.01                             sp2 C 5 memb.ring in purines
+CM 12.01                             sp2 C  pyrimidines in pos. 5 & 6
+CN 12.01                             sp2 C aromatic 5&6 memb.ring junct.(TRP)
+CQ 12.01                             sp2 C in 5 mem.ring of purines between 2 N
+CR 12.01                             sp2 arom as CQ but in HIS
+CT 12.01                             sp3 aliphatic C
+CV 12.01                             sp2 arom. 5 memb.ring w/1 N and 1 H (HIS)
+CW 12.01                             sp2 arom. 5 memb.ring w/1 N-H and 1 H (HIS)
+C* 12.01                             sp2 arom. 5 memb.ring w/1 subst. (TRP)
+CZ 12.01                             sp  HC-=CH  acetilen
+C0 40.08                             calcium
+H  10.08                             H bonded to nitrogen atoms
+HC 10.08                             H aliph. bond. to C without electrwd.group
+H1 10.08                             H aliph. bond. to C with 1 electrwd. group
+H2 10.08                             H aliph. bond. to C with 2 electrwd.groups
+H3 10.08                             H aliph. bond. to C with 3 eletrwd.groups
+HA 10.08                             H arom. bond. to C without elctrwd. groups
+H4 10.08                             H arom. bond. to C with 1 electrwd. group
+H5 10.08                             H arom. bond. to C with 2 electrwd. groups
+HO 10.08                             hydroxyl group
+HS 10.08                             hydrogen bonded to sulphur
+HW 10.08                             H in TIP3P water
+HP 10.08                             H bonded to C next to positively charged gr
+I  126.9                             iodine
+IM 35.45                             assumed to be Cl-
+IP 22.99                             assumed to be Na+
+IB 131.0                             'big ion w/ waters' for vacuum (Na+, 6H2O)
+MG 24.305                            magnesium
+N  14.01                             sp2 nitrogen in amide groups
+NA 14.01                             sp2 N in 5 memb.ring w/H atom (HIS)
+NB 14.01                             sp2 N in 5 memb.ring w/LP (HIS,ADE,GUA)
+NC 14.01                             sp2 N in 6 memb.ring w/LP (ADE,GUA)
+N2 14.01                             sp2 N in amino groups
+N3 14.01                             sp3 N for charged amino groups (Lys, etc)
+N* 14.01                             sp2 N 
+O  16.00                             carbonyl group oxygen
+OW 16.00                             oxygen in TIP3P water
+OH 16.00                             oxygen in hydroxyl group
+OS 16.00                             ether and ester oxygen
+O2 16.00                             carboxyl and phosphate group oxygen
+P  30.97                             phosphate
+S  32.06                             sulphur in disulfide linkage
+SH 32.06                             sulphur in cystine
+CU 63.55                             copper
+FE 55.00                             iron
+Li  6.94                             lithium
+K  39.10                             potassium
+Rb 85.47                             rubidium
+Cs 132.91                            cesium
+CL 35.453                            Chlorine
+ZN 65.38                             Zinc+2
+CAL40.70                             Calcium+2 
+$END
+#
+#C   H   HO  N   NA  NB  NC  N2  NT  N2  N3  N*  O   OH  OS  P   O2 
+$BONDPAR
+#      Kb(harm)/2       b0
+# Ebond = (Kbharm/2)*(b - b0)**2
+#         Kb(harm)(GROMOS) = Kb(harm)(Amber)
+#     Kb(harm)/2
+#      kcal/A**2   A
+OW-HW  553.0    0.9572    ! TIP3P water
+HW-HW  553.0    1.5136      TIP3P water
+C -CA  469.0    1.409       JCC,7,(1986),230; TYR
+C -CB  447.0    1.419       JCC,7,(1986),230; GUA
+C -CM  410.0    1.444       JCC,7,(1986),230; THY,URA
+C -CK  410.0    1.409       YV 3TEA
+C -CT  317.0    1.522       JCC,7,(1986),230; AA
+C -N   490.0    1.335
+C -N2  490.0    1.330       KET YV
+C -N*  424.0    1.383       JCC,7,(1986),230; CYT,URA
+C -NA  418.0    1.388       JCC,7,(1986),230; GUA.URA
+C -NC  457.0    1.358       JCC,7,(1986),230; CYT
+C -O   570.0    1.229       JCC,7,(1986),230; AA,CYT,GUA,THY,URA
+C -NB  430.0    1.350       YV: 5TEA
+C -O2  656.0    1.250       JCC,7,(1986),230; GLU,ASP
+C -OH  450.0    1.364       JCC,7,(1986),230; TYR
+C -OS  450.0    1.260       trna, YG
+CA-CA  469.0    1.400       JCC,7,(1986),230; BENZENE,PHE,TRP,TYR
+CA-CB  469.0    1.404       JCC,7,(1986),230; ADE,TRP
+CA-CM  427.0    1.433       JCC,7,(1986),230; CYT
+CA-CT  317.0    1.510       JCC,7,(1986),230; PHE,TYR
+CA-CN  469.0    1.400
+CA-HA  367.0    1.080       changed from 340. bsd on C6H6 nmodes; PHE,TRP,TYR
+CA-H4  367.0    1.080       changed from 340. bsd on C6H6 nmodes; no assigned
+CA-N2  481.0    1.340       JCC,7,(1986),230; ARG,CYT,GUA
+CA-NA  427.0    1.381       JCC,7,(1986),230; GUA
+CA-N*  427.0    1.345       TPF in 1ea1, YV 2003
+CA-NB  427.0    1.325       TPF in 1ea1, YV 2003
+CA-NC  483.0    1.339       JCC,7,(1986),230; ADE,CYT,GUA
+CA-N   483.0    1.410       YV, KET
+CA-CL  300.0    1.750       YV from TRIADIMENOLE SYBYL
+CA-OS  350.0    1.390       YV from TRIADIMENOLE SYBYL
+CA-OH  350.0    1.390       YV: 3HC base 2013
+CB-CB  520.0    1.370       JCC,7,(1986),230; ADE,GUA
+CB-N*  436.0    1.374       JCC,7,(1986),230; ADE,GUA
+CB-NB  414.0    1.391       JCC,7,(1986),230; ADE,GUA
+CB-NC  461.0    1.354       JCC,7,(1986),230; ADE,GUA
+CB-NA  460.1    1.360       trna, YG
+CK-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes; ADE,GUA
+CK-HA  367.0    1.080       YV: 5TEA
+CK-N*  440.0    1.371       JCC,7,(1986),230; ADE,GUA
+CK-NA  480.0    1.320       trna, 7MG
+CK-NB  529.0    1.304       JCC,7,(1986),230; ADE,GUA
+CK-CK  530.0    1.355       YV 2016, for DAE
+NC-CK  440.0    1.374       YV 2016, for DAE
+CM-CM  549.0    1.350       JCC,7,(1986),230; CYT,THY,URA
+CM-CT  317.0    1.510       JCC,7,(1986),230; THY
+CM-HA  367.0    1.080       changed from 340. bsd on C6H6 nmodes; CYT,URA
+CM-H4  367.0    1.080       changed from 340. bsd on C6H6 nmodes; CYT,URA
+CM-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes; not assigned
+CM-N*  448.0    1.365       JCC,7,(1986),230; CYT,THY,URA
+CM-NA  448.0    1.370       trna, PSU
+CQ-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes; ADE
+CQ-NC  502.0    1.324       JCC,7,(1986),230; ADE
+CQ-NA  500.0    1.340       trna unusual base; ynv
+CT-CT  310.0    1.526       JCC,7,(1986),230; AA, SUGARS
+CT-HC  340.0    1.090       changed from 331 bsd on NMA nmodes; AA, SUGARS
+CT-H1  340.0    1.090       changed from 331 bsd on NMA nmodes; AA, RIBOSE
+CT-H2  340.0    1.090       changed from 331 bsd on NMA nmodes; SUGARS
+CT-H3  340.0    1.090       changed from 331 bsd on NMA nmodes; not assigned
+CT-HP  340.0    1.090        changed from 331; AA-lysine, methyl ammonium cation
+CT-N*  337.0    1.475       JCC,7,(1986),230; ADE,CYT,GUA,THY,URA
+CT-N2  337.0    1.463       JCC,7,(1986),230; ARG
+CT-N   337.0    1.449       JCC,7,(1986),230; AA
+CT-N3  367.0    1.471       JCC,7,(1986),230; LYS
+CT-NB  360.0    1.320       trna,  YG
+CT-NC  350.0    1.390       trna,  PSU
+CT-NA  330.0    1.460       trna,  PSU
+CT-OH  320.0    1.410       JCC,7,(1986),230; SUGARS
+CT-OS  320.0    1.410       JCC,7,(1986),230; NUCLEIC ACIDS
+CT-S   227.0    1.810       changed from 222.0 based on dimethylS nmodes
+CT-SH  237.0    1.810       changed from 222.0 based on methanethiol nmodes
+CK-CT  310.0    1.490       YV: 3TEA
+N*-NB  250.0    1.410       TPF from 1ea1, YV 2003
+N -OH  250.0    1.370       YV: 5TEA
+H -N2  434.0    1.010       JCC,7,(1986),230; ADE,CYT,GUA,ARG
+H1-N2  434.0    1.010       trna
+H -N*  434.0    1.010       for plain unmethylated bases ADE,CYT,GUA,ARG
+H -NA  434.0    1.010       JCC,7,(1986),230; GUA,URA,HIS
+HA-NA  434.0    1.010       trna UnBase
+HO-OH  553.0    0.960       JCC,7,(1986),230; SUGARS,SER,TYR
+HO-OS  553.0    0.960       JCC,7,(1986),230; NUCLEOTIDE ENDS
+O2-P   525.0    1.480       JCC,7,(1986),230; NA PHOSPHATES
+OH-P   500.0    1.510       !orig=230.0    1.610:JCC,7,(1986),230; NA PHOSPHATES
+OS-P   500.0    1.510       !orig=230.0    1.610: JCC,7,(1986),230; NA PHOSPHATES
+N -P   450.0    1.500       !YV,DRL
+NA-P   450.0    1.510       !YV 3TEA
+C*-HC  367.0    1.080       changed from 340. bsd on C6H6 nmodes, not needed AA
+C*-HA  367.0    1.080       YV: 2013
+C -N   490.0    1.335       JCC,7,(1986),230; AA
+C*-CB  388.0    1.459       JCC,7,(1986),230; TRP
+C*-C*  388.0    1.459       YV, HEM
+C*-C   310.0    1.526       YV, HEM
+C -C   310.0    1.526       YV, HEM
+C -HC  367.0    1.080       YV, HEM
+C -HA  367.0    1.080       YV, HEM  
+C*-CT  317.0    1.495       JCC,7,(1986),230; TRP
+C*-CW  546.0    1.352       JCC,7,(1986),230; TRP
+CA-CN  469.0    1.400       JCC,7,(1986),230; TRP
+CB-CN  447.0    1.419       JCC,7,(1986),230; TRP
+CC-CT  317.0    1.504       JCC,7,(1986),230; HIS
+CC-CV  512.0    1.375       JCC,7,(1986),230; HIS(delta)
+CC-CW  518.0    1.371       JCC,7,(1986),230; HIS(epsilon)
+CC-NA  422.0    1.385       JCC,7,(1986),230; HIS
+CC-NB  410.0    1.394       JCC,7,(1986),230; HIS
+CN-NA  428.0    1.380       JCC,7,(1986),230; TRP
+CR-H5  367.0    1.080       changed from 340. bsd on C6H6 nmodes;HIS
+CR-NA  477.0    1.343       JCC,7,(1986),230; HIS
+CR-NB  488.0    1.335       JCC,7,(1986),230; HIS
+CV-H4  367.0    1.080       changed from 340. bsd on C6H6 nmodes; HIS
+CV-NB  410.0    1.394       JCC,7,(1986),230; HIS
+CW-H4  367.0    1.080       changed from 340. bsd on C6H6 nmodes;HIS(epsilon,+)
+CW-NA  427.0    1.381       JCC,7,(1986),230; HIS,TRP
+C*-NA  427.0    1.381       YV: 2013
+H -N   434.0    1.010       JCC,7,(1986),230; AA
+H -N3  434.0    1.010       JCC,7,(1986),230; LYS    
+HS-SH  274.0    1.336       JCC,7,(1986),230; CYS
+S -S   166.0    2.038       JCC,7,(1986),230; CYX   (SCHERAGA)
+CT-F   367.0    1.380       JCC,13,(1992),963;CF4; R0=1.332 FOR CHF3
+CZ-CZ  500.0    1.20        YV, PARconazole
+CZ-HA  400.0    1.06        YV, PARconazole
+CZ-CT  400.0    1.46        YV, PARconazole 
+CA-F   367.0    1.350       F-CArom
+NB-FE  120.0    1.980       gromos96
+N -N   450.0    1.30        YV in -N=N=N
+S -CA  200.0    1.74        YV : 3HC base
+S -OS  200.0    1.45        YV :SO4
+$END
+#
+$ANGLPAR
+#       Kang(harm)/2       alf0
+# Eang = Kang(harm/2)*(alf - alg0)**2
+# Kang(harm)(GROMOS) = Kang(harm)(amber)
+#(a8,3x,f9.3,f9.3)
+#        Kang(harm)/2
+#          kcal/rad**2  grad 
+HW-OW-HW    100.      104.52    TIP3P water
+HW-HW-OW      0.      127.74    (found in crystallographic water with 3 bonds)
+CB-C -NA    70.0      111.30    NA
+CB-C -O     80.0      128.80
+CM-C -NA    70.0      114.10
+CM-C -O     80.0      125.30
+CT-C -O     80.0      120.40
+CA-C -O     80.0      120.00     !RGZ, Yv
+CT-C -O2    70.0      117.00
+CT-C -OH    70.0      117.00
+N*-C -NA    70.0      115.40
+N*-C -Ne    70.0      118.60
+N*-C -O     80.0      120.90
+N*-C -NC    70.0      120.0      t rna
+N*-CB-N*    70.0      120.0     t rna
+N*-CT-HC    35.0      110.0     t rna
+N*-CA-CA    70.0      120.0     PIM
+CA-N*-CA    70.0      120.0     PIM
+CA-CA-NB    70.0      120.0     PIM
+CB-CA-CK    70.0      110.0     YV  2016
+CA-NC-CK    70.0      110.0     YV  2016
+NB-CA-NC    70.0      110.0     YV  2016
+NB-CK-CK    70.0      110.0     YV  2016
+CK-CK-H5     0.0      125.0     YV  2016
+CK-CK-NC    70.0      110.0     YV  2016
+NC-CK-H5    70.0      110.0     YV  2016
+CA-N -CT    70.0      120.0     KET
+CA-N*-C     70.0      109.0     ITRaconazole
+N*-C -N*    70.0      109.0     ITRaconazole
+NB-N*-C     70.0      109.0     ITRaconazole
+NA-C -O     80.0      120.60
+NC-C -O     80.0      122.50
+NA-C -NA    70.0      120.0     t rna 
+NC-CA-CT    80.0      120.0     trna
+CT-C -N     70.0      116.60    AA general
+N -C -O     80.0      122.90    AA general
+N -C -O2    80.0      120.0     trna
+N -C -OS    80.0      120.0     trna YG base
+O -C -O     80.0      126.00    AA COO- terminal residues
+O2-C -O2    80.0      126.00    AA GLU            (SCH JPC 79,2379)
+O -C -OH    80.0      126.00
+O2-C -OS    80.0      120.0     trna YG base
+CA-C -CA    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes; AA tyr
+CA-C -OH    70.0      120.00    AA tyr
+CT-C -OS    70.0      120.0     trna YGbase
+CT-N -OH    70.0      120.0     YV, 5TEA
+C*-C -C     70.0      120.0     YV, HEM
+C*-C -HA    35.0      120.0     YV, HEM
+C -C -HA    35.0      120.0     YV, HEM
+C -C -HC    35.0      120.0     YV, HEM
+HA-C -HA    35.0      120.0     YV, HEM
+HA-C -HC    35.0      120.0     YV, HEM 
+C -CA-CA    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes
+CA-CA-CA    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes
+CA-CA-CB    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes
+CA-CA-CL    35.0      120.0     YV
+CA-CA-CT    70.0      120.00
+CA-CA-NC    70.0      120.0
+CA-CA-N     70.0      120.0 
+CA-CA-HA    35.0      120.00
+CA-CA-H4    35.0      120.00
+NC-CA-HA    35.0      120.00     YV 5TEA
+NC-CA-NC    70.0      120.0      YV 5TEA
+CA-NC-CA    70.0      120.0      YV 5TEA
+CA-CA-N2    63.0      120.00     YV, BENZ
+CA-CA-OS    60.0      110.0      YV, triademinazole SYBYL
+CA-OS-CT    60.0      110.0      YV, triademinazole SYBYL 
+CB-CA-HA    35.0      120.00
+CB-CA-CB    60.0      120.00     YV, HEM
+CB-CA-H4    35.0      120.00
+CB-CA-N2    70.0      123.50
+CB-CA-NC    70.0      117.30
+CM-CA-N2    70.0      120.10
+CM-CA-NC    70.0      121.50
+N2-CA-NA    70.0      116.00
+N2-CA-NC    70.0      119.30
+N2-CT-HC    35.0      109.50    KET, YV
+NA-CA-NC    70.0      123.30
+NA-CA-N     70.0      123.30    YV: DOG: 8oxoG
+C -CA-HA    35.0      120.00    AA tyr
+N2-CA-N2    70.0      120.00    AA arg
+CN-CA-HA    35.0      120.00    AA trp
+CA-CA-CN    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes; AA trp
+NA-CA-CA    63.0      104.0     trna YG
+NA-CA-CT    60.0      131.5     trna YG base
+CB-CA-NA    60.0      120.0     trna
+C -CB-CB    63.0      119.20    changed from 85.0  bsd on C6H6 nmodes; NA gua
+C -NA-CB    70.0      120.00    trna Unusual bases
+C -CB-NB    70.0      130.00
+CA-CB-CB    63.0      117.30    changed from 85.0  bsd on C6H6 nmodes; NA ade
+CA-CB-NB    70.0      132.40    
+CB-CB-N*    70.0      106.20
+CB-CB-NB    70.0      110.40
+CB-CB-NC    70.0      127.70
+N*-CB-NC    70.0      126.20
+C*-CB-CA    63.0      134.90    changed from 85.0  bsd on C6H6 nmodes; AA trp
+C*-CB-CN    63.0      108.80    changed from 85.0  bsd on C6H6 nmodes; AA trp
+CA-CB-CN    63.0      116.20    changed from 85.0  bsd on C6H6 nmodes; AA trp
+NA-CB-NC    63.0      114.0     trna YGbase
+NA-CB-N*    63.0      124.0     trna YGbase 
+NA-CB-C     60.0      120.0     trna UNbase
+NA-CB-CB    60.0      120.0     trna UNbase 
+NB-CB-C*    60.0      120.0     YV, HEM
+CB-NB-CB    60.0      120.0     YV, HEM
+CT-N2-C     60.0      120.0     KET, YV
+N2-C -O     60.0      120.0     KET, YV
+N2-C -CT    60.0      120.0     KET, YV
+N*-CK-HA    60.0      123.0     YV, 5TEA
+HA-CK-NB    60.0      123.0     YV 5TEA
+H5-CK-N*    35.0      123.05
+H5-CK-NB    35.0      123.05
+N*-CK-NB    70.0      113.90
+N*-CT-OH    50.0      109.5     YV, triademinazole
+C -CM-CM    63.0      120.70    changed from 85.0  bsd on C6H6 nmodes; NA thy
+C -CM-CT    70.0      119.70
+C -CM-HA    35.0      119.70
+C -CM-H4    35.0      119.70
+CA-CM-CM    63.0      117.00    changed from 85.0  bsd on C6H6 nmodes; NA cyt
+CA-CM-HA    35.0      123.30
+CA-CM-H4    35.0      123.30
+CM-CM-CT    70.0      119.70
+CM-CM-HA    35.0      119.70
+CM-CM-H4    35.0      119.70
+CM-CM-N*    70.0      121.20
+HA-CZ-CZ    100.0     180.0     YV,2004 DOCAnozol
+CZ-CZ-CT    100.0     180.      YV, 2004 DOCanozol
+H4-CM-N*    35.0      119.10
+H5-CQ-NC    35.0      115.45
+NC-CQ-NC    70.0      129.10
+CM-CT-HC    50.0      109.50    changed based on NMA nmodes
+CT-CT-CT    40.0      109.50
+CM-CT-CT    40.0      109.50    trna PSU 
+CK-CT-CT    40.0      109.50    5TEA YV
+CT-CT-HC    50.0      109.50    changed based on NMA nmodes
+CT-CT-H1    50.0      109.50    changed based on NMA nmodes
+CT-CT-H2    50.0      109.50    changed based on NMA nmodes
+CT-CT-HP    50.0      109.50    changed based on NMA nmodes
+CT-CT-N*    50.0      109.50
+CA-CT-N*    50.0      109.50    CLOtrimazol, YV
+CA-CT-CA    50.0      109.50    CLOtrimazol, YV
+CA-CT-OH    50.0      109.50    TPF, 1ea1 YV
+CA-CT-OS    50.0      109.50    DOCanozole YV
+OS-CT-OS    50.0      109.50    DOCanozole YV
+CT-CT-OH    50.0      109.50
+CA-CT-H1    50.0      109.50    trna YGbase
+CT-CT-OS    50.0      109.50
+OS-CT-N     50.0      109.50    5TEA
+HC-CT-HC    35.0      109.50
+OS-CT-HC    35.0      109.50    trna YGbase 
+H1-CT-H1    35.0      109.50
+HP-CT-HP    35.0      109.50    AA lys, ch3nh4+
+H2-CT-N*    50.0      109.50    changed based on NMA nmodes
+H2-CT-CM    50.0      109.50    trna YGbase
+CM-CM-H4    50.0      109.50    trna YGbase
+H1-CT-N*    50.0      109.50    changed based on NMA nmodes
+H1-CT-OH    50.0      109.50    changed based on NMA nmodes 
+H1-CT-OS    50.0      109.50    changed based on NMA nmodes 
+H2-CT-OS    50.0      109.50    changed based on NMA nmodes
+N*-CT-OS    50.0      109.50
+H1-CT-N     50.0      109.50    AA general  changed based on NMA nmodes
+C -CT-H1    50.0      109.50    AA general  changed based on NMA nmodes
+C -CT-HP    50.0      109.50    AA zwitterion  changed based on NMA nmodes
+H1-CT-S     50.0      109.50    AA cys     changed based on NMA nmodes
+H1-CT-SH    50.0      109.50    AA cyx     changed based on NMA nmodes
+CT-CT-S     50.0      114.70    AA cyx            (SCHERAGA  JPC 79,1428)
+CT-CT-SH    50.0      108.60    AA cys
+H2-CT-H2    35.0      109.50    AA lys
+H1-CT-N2    50.0      109.50    AA arg     changed based on NMA nmodes
+HP-CT-N3    50.0      109.50    AA lys, ch3nh3+, changed based on NMA nmodes
+CA-CT-CT    63.0      114.00    AA phe tyr          (SCH JPC  79,2379)
+C -CT-HC    50.0      109.50    AA gln      changed based on NMA nmodes
+C*-CT-HC    50.0      109.50     YV, HEM
+C -CT-N     63.0      110.10    AA general
+CT-CT-N2    80.0      111.20    AA arg             (JCP 76, 1439)
+CT-CT-N     80.0      109.70    AA ala, general    (JACS 94, 2657)
+C -CT-CT    63.0      111.10    AA general
+CA-CT-HC    50.0      109.50    AA tyr     changed based on NMA nmodes
+CT-CT-N3    80.0      111.20    AA lys             (JCP 76, 1439)
+CC-CT-CT    63.0      113.10    AA his
+CC-CT-HC    50.0      109.50    AA his     changed based on NMA nmodes
+C -CT-N3    80.0      111.20    AA amino terminal residues
+C*-CT-CT    63.0      115.60    AA trp
+OS-CT-CM    60.0      109.5     trna PSU
+C*-CT-HC    50.0      109.50    AA trp    changed based on NMA nmodes
+OS-CT-HC    60.0      109.5     trna YG base
+CM-CT-H1    60.0      109.5     trna
+OS-CT-CZ    60.0      109.5     PARcanazol
+HC-CT-CZ    60.0      109.5     PARcanazol
+NA-CT-H1    35.0      109.5     trna
+NB-CT-H1    35.0      109.5     YV
+NB-CT-CT    80.0      111.20    AA lys 
+CT-CM-CA    80.0      120.0     trna
+CM-CM-NA    80.0      120.0     trna PSU
+CM-NA-HA    50.0      120.0     trna PSU
+HA-NA-C     50.0      120.0     trna
+CM-NA-C     50.0      120.0     trna PSU 
+CA-NA-CQ    50.0      120.0     trna 
+CA-NA-CT    50.0      120.0     trna 
+CA-N -C     50.0      120.0     5TEA YV
+CA-NB-CK    50.0      120.0     5TEA YV
+P -NA-CK    50.0      120.0     5TEA YV
+CA-N -C     50.0      120.0     5TEA YV
+CA-NB-CK    50.0      120.0     5TEA YV
+C -CK-C     50.0      120.0     5TEA Yv
+C -CK-NB    50.0      120.0     5TEA YV
+C -NB-CA    50.0      120.0     5TEA YV
+NA-CK-CT    50.0      120.0     5TEA YV
+NB-CK-C     50.0      120.0     5TEA YV
+CT-CK-CT    50.0      118.0     5TEA YV
+CK-C -NB    50.0      120.0     5TEA YV
+CK-C -N     50.0      120.0     5TEA YV
+CK-C -NB    50.0      120.0     5TEA YV
+CK-NA-H     50.0      120.0     5TEA YV
+CK-CT-HC    50.0      109.5     5TEA YV
+N -CA-NC    50.0      120.0     5TEG YV
+C -N*-CB    50.0      122.0     YV: DOG: 8oxG
+CT-N*-NB    50.0      125.0     TPF, 1ea1 YV
+CT-N*-CA    50.0      125.0     TPF, 1ea1 YV
+N*-NB-CA    50.0      107.0     TPF, 1ea1 YV
+CB-NB-CT    50.0      120.0     YV, RGZ
+NB-N*-CA    50.0      109.0     TPF, 1ea1 YV
+N*-CA-NB    50.0      120.00    TPF, 1ea1 YV
+N*-CA-HA    50.0      120.00    TPF, 1ea1 YV
+H -NA-CB    50.0      120.0     DOG : 8oxG
+N -CA-HA    50.0      120.0     5TEA YV
+N -CA-NB    50.0      120.0     5TEA YV
+N -C -CK    50.0      120.0     5TEA YV
+N -C -NB    50.0      120.0     5TEA YV
+P -NA-CK    50.0      120.0     5TEA YV
+P -NA-H     50.0      120.0     5TEA YV
+H -N -CA    50.0      120.0     5TEG YV
+NB-CA-NB    50.0      120.00    TPF, 1ea1 YV
+CA-NB-CA    50.0      120.00    TPF, 1ea1 YV
+NB-CA-HA    50.0      120.00    TPF, 1ea1 YV
+N -CT-HC    50.0      120.0     KET  YV
+N -C -CA    50.0      120.0     RGZ, YV
+CT-CC-NA    70.0      120.00    AA his
+CT-CC-CV    70.0      120.00    AA his
+CT-CC-NB    70.0      120.00    AA his
+CV-CC-NA    70.0      120.00    AA his
+CW-CC-NA    70.0      120.00    AA his
+CW-CC-NB    70.0      120.00    AA his
+CA-CT-N     70.0      120.0     RGZ, YV
+CT-CC-CW    70.0      120.00    AA his
+N*-CK-NA    70.0      120.00    trna
+H5-CR-NA    35.0      120.00    AA his
+H5-CR-NB    35.0      120.00    AA his
+NA-CR-NA    70.0      120.00    AA his
+NA-CR-NB    70.0      120.00    AA his
+CC-CV-H4    35.0      120.00    AA his
+CC-CV-NB    70.0      120.00    AA his
+H4-CV-NB    35.0      120.00    AA his
+CC-CW-H4    35.0      120.00    AA his
+CC-CW-NA    70.0      120.00    AA his
+H4-CW-NA    35.0      120.00    AA his
+C*-CW-H4    35.0      120.00    AA trp
+C*-CW-NA    70.0      108.70    AA trp
+CT-C*-CW    70.0      125.00    AA trp
+CB-C*-CT    70.0      128.60    AA trp
+CB-C*-CW    63.0      106.40    changed from 85.0  bsd on C6H6 nmodes; AA trp
+CB-C*-C*    60.0      120.0     YV, HEM
+CB-C*-CT    60.0      120.0     YV, HEM
+C*-C*-CB    60.0      120.0     YV, HEM
+C*-C*-CT    60.0      120.0     YV, HEM
+C*-C*-C     60.0      120.0     YV, HEM
+CB-C*-C     60.0      120.0     YV, HEM
+CA-CN-NA    70.0      132.80    AA trp
+CB-CN-NA    70.0      104.40    AA trp
+CA-CN-CB    63.0      122.70    changed from 85.0  bsd on C6H6 nmodes; AA trp
+H4-CM-NA    35.0      109.5     trna
+NA-CQ-NC    60.0      120.0     trna
+NA-CQ-H5    35.0      120.0     trna
+C -N -CT    50.0      121.90    AA general
+C -N -H     30.0      120.00    AA general, gln, asn,changed based on NMA nmodes
+CT-N -H     30.0      118.04    AA general,     changed based on NMA nmodes
+CT-N -CT    50.0      118.00    AA pro             (DETAR JACS 99,1232)
+H -N -H     35.0      120.00    ade,cyt,gua,gln,asn     **
+H -N -P     50.0      118.00    YV
+CT-N -P     50.0      118.00    YV
+C -N*-CM    70.0      121.60
+C -N*-CT    70.0      117.60
+C -N*-H     30.0      119.20    changed based on NMA nmodes
+CB-N*-CK    70.0      105.40
+CB-N*-CT    70.0      125.80
+CB-N*-H     30.0      125.80    for unmethylated n.a. bases,chngd bsd NMA nmodes
+CK-N*-CT    70.0      128.80
+CK-N*-H     30.0      128.80    for unmethylated n.a. bases,chngd bsd NMA nmodes
+CM-N*-CT    70.0      121.20
+CM-N*-H     30.0      121.20    for unmethylated n.a. bases,chngd bsd NMA nmodes
+CB-N*-CB    70.0      112.50    trna YG base
+CA-N2-H     35.0      120.00    
+H -N2-H     35.0      120.00    
+H1-N2-H1    35.0      120.00
+CT-N2-H     35.0      118.40    AA arg
+CA-N2-CT    50.0      123.20    AA arg
+CT-N2-CT    50.0      120.0     trna OMC,OMG
+CA-N2-H1    35.0      120.00    trna
+CT-N3-H     50.0      109.50    AA lys,     changed based on NMA nmodes
+CT-N3-CT    50.0      109.50    AA pro/nt
+H -N3-H     35.0      109.50    AA lys, AA(end)
+C -NA-C     70.0      126.40
+C -NA-CA    70.0      125.20
+C -NA-H     30.0      116.80    changed based on NMA nmodes
+CA-NA-H     30.0      118.00    changed based on NMA nmodes
+CA-NA-CB    70.0      120.0 
+CC-NA-CR    70.0      120.00    AA his
+CC-NA-H     30.0      120.00    AA his,    changed based on NMA nmodes
+CR-NA-CW    70.0      120.00    AA his
+CR-NA-H     30.0      120.00    AA his,    changed based on NMA nmodes
+CW-NA-H     30.0      120.00    AA his,    changed based on NMA nmodes
+CN-NA-CW    70.0      111.60    AA trp
+CK-NA-CB    70.0      120.0     trna
+CK-NA-CT    70.0      120.0     trna
+CB-NA-CT    70.0      120.0     trna
+CQ-NA-CT    70.0      120.0     trna
+CN-NA-H     30.0      123.10    AA trp,    changed based on NMA nmodes
+NA-CK-H5    30.0      120.0     trna UuUs base
+CB-NB-CK    70.0      103.80
+CC-NB-CR    70.0      117.00    AA his
+CR-NB-CV    70.0      117.00    AA his
+CB-NB-CB    70.0      116.0     gromos96,HEM 
+CK-NB-CT    50.0      121.9     YV eq. C-N-CT
+FE-NB-CB    60.0      125.0     gromos96,HEM
+C -NC-CA    70.0      120.50
+CA-NC-CB    70.0      112.20
+CA-NC-CQ    70.0      118.60
+CB-NC-CQ    70.0      111.00
+C -OH-HO    35.0      113.00
+CT-OH-HO    55.0      108.50
+N -OH-HO    35.0      109.50   YV, 5TEA
+HO-OH-P     45.0      108.50
+HO-OS-P     45.0      108.50
+CT-OS-CT    60.0      109.50
+CT-OS-P    100.0      120.50
+C -OS-CT    60.0      120.0    trna YG base
+P -OS-P    100.0      120.50
+O2-P -OH    45.0      108.23
+OS-P -OH    45.0      108.23
+O2-P -O2   140.0      119.90
+O2-P -OS   100.0      108.23
+OH-P -OS    45.0      102.60
+OS-P -OS    45.0      102.60
+OS-P -N     45.0      108.23
+O2-P -N     45.0      108.23
+O2-P -NA    45.0      108.23
+OS-P -NA    45.0      108.23
+CT-S -CT    62.0       98.90    AA met
+CT-S -S     68.0      103.70    AA cyx             (SCHERAGA  JPC 79,1428)
+CT-SH-HS    43.0       96.00    changed from 44.0 based on methanethiol nmodes
+HS-SH-HS    35.0       92.07    AA cys
+CA-S -CA    62.0       98.90    : YV 3HC base
+F -CT-F     77.0      109.10    JCC,13,(1992),963;
+F -CT-H1    35.0      109.50    JCC,13,(1992),963;
+F -CA-CA    35.0      120.0     YV aromatic
+NB-FE-NB    10.0      115.0     gromos96
+N -N -N    500.0      170.0     YV, N=N=N
+CA-N -N    500.0      170.0     RGZ, YV 
+C -CA-OH    60.0      120.0     : 3HC base Nikila 2013
+CA-CA-OH    60.0      120.0     : 3HC base Nikila 2013
+OS-S -OS    40.0      109.5     : YV SO4
+$END
+#
+$IMPROPER
+#i-j -k -l : j-planar or tetrahedral center
+# define IMPROPER quaret in plane  i-J-k 
+# gromos96                           !
+#                                    L
+#         Kimp        ksi0
+#         kcal/rad**2 grad
+CT-C -O -N    40.0       0.0               ! j- planar protBack C
+H -N -C -CT   40.0       0.0               !    planar          N
+C -N -CT-CT   40.0       0.0               ! PRO N
+CT-N2-H -CA   40.0       0.0               ! ARG NE
+CT-CC-NB-CW   40.0       0.0               ! HEM
+CR-NA-H -CW   40.0       0.0               ! HEM 
+NA-CW-H4-CC   40.0       0.0               ! HEM 
+CT-C -O2-O2   40.0       0.0               ! HEM 
+FE-NA-H -CW   40.0       0.0               ! HEM
+NA-CW-H4-CC   40.0       0.0               ! HEM
+C -CA-HA-CA   40.0       0.0               ! HEM 
+CN-CA-HA-CA   40.0       0.0               ! HEM
+CA-CB-C*-CN   40.0       0.0               ! HEM
+FE-NB-CB-CB   80.0       0.0               ! HEM
+C*-CB-CA-NB   40.0       0.0               ! HEM
+CB-C*-C*-CT   40.0       0.0               ! HEM
+CB-CA-CB-HA   40.0       0.0               ! HEM 
+C*-C*-CB-C    40.0       0.0               ! HEM
+CA-CB-NB-C*   40.0       0.0               ! HEM
+C*-C -C -HA   40.0       0.0               ! HEM
+C -C -HA-HA   40.0       0.0               ! HEM 
+C -C -HA-HC   40.0       0.0               ! HEM
+H -N2-H -CA   40.0       0.0               ! ARG -N-H2
+N2-CA-N2-N2   40.0       0.0               ! ARG -CZ-
+C -N -H -H    40.0       0.0               ! ASN  ND, GLN NE
+H -NA-CR-CG   40.0       0.0               ! HIS ND
+H5-CR-NA-NB   40.0       0.0               ! HiS CE
+H4-CV-NB-CC   40.0       0.0               ! His CD
+NA-CC-CV-CT   40.0       0.0               ! His CG
+H4-CW-NB-CC   40.0       0.0               ! His CD
+NA-CC-CW-CT   40.0       0.0               ! His CG
+CT-C*-CW-CB   40.0       0.0               ! TRP CG
+C*-CW-H4-NA   40.0       0.0               ! TRP CD1
+H -NA-CN-CW   40.0       0.0               ! TRP NE1 
+NA-CN-CA-CB   40.0       0.0               ! TRP CE2
+CN-CN-CA-C*   40.0       0.0               ! TRP CD2
+CB-CA-CA-HA   40.0       0.0               ! TRP CE3
+CA-CA-CA-HA   40.0       0.0               ! TRP CZ2, CH2; PHE 
+OH-C -CA-CA   40.0       0.0               ! TYR CZ
+CA-CA-CA-CT   40.0       0.0               ! TYR, PHE CG
+O2-C- O2-CT   40.0       0.0               ! GLU CD, ASP CG
+N -CT-C -CB   80.0       35.2644           ! tetrahedral
+CA-CA-CA-CA   40.0       0.0               ! BNZA
+CA-CA-N2-N2   40.0       0.0               ! BNZA
+F -CA-CA-CA   40.0       0.0               ! TPF, 1ea1
+CA-CA-F -CA   40.0       0.0               ! TPF, 1ea1
+CT-N*-NB-CA   40.0       0.0               ! TPF, 1ea1
+NB-CA-HA-NB   40.0       0.0               ! TPF, 1ea1
+NB-CA-HA-N*   40.0       0.0               ! TPF, 1ea1
+CA-CA-N*-CA   40.0       0.0               ! PIM, 1e9x
+NB-CA-HA-CA   40.0       0.0               ! PIM, 1e9x
+CL-CA-CA-CA   40.0       0.0               ! TRIademin
+CA-CA-CA-OS   40.0       0.0               ! TRIademinazole
+CT-N*-CA-CA   40.0       0.0               ! DOCanozole
+N*-CA-HA-CA   40.0       0.0               ! DOCanozole
+CA-N -CT-CT   40.0       0.0               ! KEToconazole
+CA-CA-CA-N2   40.0       0.0               ! KET
+CA-N2-CT-CT   40.0       0.0               ! KET
+CT-N2-CT-C    40.0       0.0               ! KET
+N2-C -O -CT   40.0       0.0               ! KET
+CA-N*-CA-C    40.0       0.0               !ITR
+NB-N*-C -CT   40.0       0.0               !ITR
+N*-C -O -N*   40.0       0.0               !ITR 
+CT-N*-CM-C    40.0       0.0               !RGZ
+N*-CM-H4-CM   40.0       0.0               !RGZ
+CM-CM-HA-C    40.0       0.0               !RGZ
+CM-C -O -NA   40.0       0.0               !RGZ
+C -NA-H -C    40.0       0.0               !RGZ 
+NA-C -O -N*   40.0       0.0               !RGZ 
+CM-CM-HA-CA   40.0       0.0               !RGZ
+CM-CA-N2-NC   40.0       0.0               !RGZ
+NC-C -O -N*   40.0       0.0               !RGZ 
+CT-N*-CK-CB   40.0       0.0               !RGZ
+N*-CK-H5-NB   40.0       0.0               !RGZ 
+CK-NB-CB-CT   40.0       0.0               !RGZ
+NB-CB-C -CB   40.0       0.0               !RGZ 
+CB-C -O -NA   40.0       0.0               !RGZ
+C -NA-H -CA   40.0       0.0               !RGZ
+NA-CA-N2-NC   40.0       0.0               !RGZ 
+NC-CB-N*-CB   40.0       0.0               !RGZ
+N -CA-CA-CA   40.0       0.0               !RGZ
+C -CA-CA-CA   40.0       0.0               !RGZ
+CA-CA-CA-N    40.0       0.0               !RGZ
+NB-CB-CA-CB   40.0       0.0               !RGZ
+CB-CA-N2-NC   40.0       0.0               !RGZ
+NC-CQ-H5-NC   40.0       0.0               !RGZ 
+NC-CB-CB-N*   40.0       0.0               !RGZ 
+NB-CB-CA-CB   40.0       0.0               !RGZ
+N -C -O -CA   40.0       0.0               !RGZ
+CM-CM-CT-C    40.0       0.0               !DRL
+P -N -H -CT   40.0       0.0               !DRL
+$END
+#
+$TORSPAR
+#            pass  Vt/2        delta             nFi
+X -C -CA-X    4   14.50        180.0             2.         intrpol.bsd.on C6H6
+X -C -CB-X    4   12.00        180.0             2.         intrpol.bsd.on C6H6
+X -C -CM-X    4    8.70        180.0             2.         intrpol.bsd.on C6H6
+X -C -N*-X    4    5.80        180.0             2.         JCC,7,(1986),230
+X -C -NA-X    4    5.40        180.0             2.         JCC,7,(1986),230
+X -C -NC-X    2    8.00        180.0             2.         JCC,7,(1986),230
+X -C -OH-X    2    1.80        180.0             2.         JCC,7,(1986),230
+X -C -OS-X    2    1.80        180.0             2.         trna, YG, ynv
+X -C -CT-X    4    0.00          0.0             2.         JCC,7,(1986),230
+X -CA-CA-X    4   14.50        180.0             2.         intrpol.bsd.on C6H6
+X -CA-CB-X    4   14.00        180.0             2.         intrpol.bsd.on C6H6
+X -CA-CM-X    4   10.20        180.0             2.         intrpol.bsd.on C6H6
+X -CA-CT-X    6    0.00        180.0             2.         JCC,7,(1986),230
+X -CA-N2-X    4    9.60        180.0             2.         reinterpolated 93'
+X -CA-NA-X    4    6.00        180.0             2.         JCC,7,(1986),230
+X -N -CA-X    4    6.00        180.0             2.         YV, eq. X -CA-NA-X
+X -CA-NC-X    2    9.60        180.0             2.         JCC,7,(1986),230
+X -CB-CB-X    4   21.80        180.0             2.         intrpol.bsd.on C6H6
+X -CB-N*-X    4    6.60        180.0             2.         JCC,7,(1986),230
+X -CB-NB-X    2    5.10        180.0             2.         JCC,7,(1986),230
+X -CB-NC-X    2    8.30        180.0             2.         JCC,7,(1986),230
+X -NA-CB-X    2    8.00        180.0             2.         trna
+X -NA-CM-X    2    8.00        180.0             2.         trna
+X -NA-CK-X    2    8.00        180.0             2.         trna
+X -CK-NA-X    2    8.00        180.0             2.         trna
+X -NA-CQ-X    2    8.00        180.0             2.         trna
+X -NA-CT-X    3    0.00        180.0             2.         trna
+X -NB-CT-X    3    0.00        180.0             2.         YV   
+X -CK-N*-X    4    6.80        180.0             2.         JCC,7,(1986),230
+X -CK-NB-X    2   20.00        180.0             2.         JCC,7,(1986),230
+X -CM-CM-X    4   26.60        180.0             2.         intrpol.bsd.on C6H6
+X -CM-CT-X    6    0.00          0.0             3.         JCC,7,(1986),230
+X -CM-N*-X    4    7.40        180.0             2.         JCC,7,(1986),230
+X -CQ-NC-X    2   13.60        180.0             2.         JCC,7,(1986),230
+X -CT-CT-X    9    1.40          0.0             3.         JCC,7,(1986),230
+X -CT-N -X    6    0.00          0.0             2.         JCC,7,(1986),230
+X -CT-N*-X    6    0.00          0.0             2.         JCC,7,(1986),230
+X -CT-N2-X    6    0.00          0.0             3.         JCC,7,(1986),230
+X -CT-OH-X    3    0.50          0.0             3.         JCC,7,(1986),230
+X -CT-OS-X    3    1.15          0.0             3.         JCC,7,(1986),230
+X -OH-P -X    3    0.75          0.0             3.         JCC,7,(1986),230
+X -OS-P -X    3    0.75          0.0             3.         JCC,7,(1986),230
+X -C -N -X    4   10.00        180.0             2.         AA|check Wendy?&NMA
+X -CT-N3-X    9    1.40          0.0             3.         JCC,7,(1986),230
+X -CT-S -X    3    1.00          0.0             3.         JCC,7,(1986),230
+X -CT-SH-X    3    0.75          0.0             3.         JCC,7,(1986),230
+X -C*-CB-X    4    6.70        180.0             2.         intrpol.bsd.onC6H6aa
+X -C*-CT-X    6    0.00          0.0             2.         JCC,7,(1986),230
+X -C*-CW-X    4   26.10        180.0             2.         intrpol.bsd.on C6H6
+X -C*-C*-X    4   26.10        180.0             2.         YV, HEM
+X -C*-C -X    4   26.10        180.0             2.         YV, HEM
+X -C -C -X    4   20.0         180.0             2.         YV, HEM
+X -FE-NB-X    1    0.0         180.0             2.         YV, HEM
+X -N*-NB-X    1    20.0        180.0             2.         YV, TPF, 1ea1
+X -N*-CA-X    1    20.0        180.0             2.         YV, TPF, 1ea1
+X -NB-CA-X    1    20.0        180.0             2.         YV, TPF, 1ea1
+X -CA-CN-X    4   14.50        180.0             2.         reinterpolated 93'
+X -CB-CN-X    4   12.00        180.0             2.         reinterpolated 93'
+X -CC-CT-X    6    0.00          0.0             2.         JCC,7,(1986),230
+X -CC-CV-X    4   20.60        180.0             2.         intrpol.bsd.on C6H6
+X -CC-CW-X    4   21.50        180.0             2.         intrpol.bsd.on C6H6
+X -CC-NA-X    4    5.60        180.0             2.         JCC,7,(1986),230
+X -CC-NB-X    2    4.80        180.0             2.         JCC,7,(1986),230
+X -CN-NA-X    4    6.10        180.0             2.         reinterpolated 93'
+X -CR-NA-X    4    9.30        180.0             2.         JCC,7,(1986),230
+X -CR-NB-X    2   10.00        180.0             2.         JCC,7,(1986),230
+X -CV-NB-X    2    4.80        180.0             2.         JCC,7,(1986),230
+X -CW-NA-X    4    6.00        180.0             2.         JCC,7,(1986),230
+CT-CT-OS-CT   1    0.383         0.0            -3.
+CT-CT-OS-CT   1    0.1         180.0             2.
+CA-CA-OS-CT   2    0.0           0.0             2.         YV
+C -N -CT-C    1    0.20        180.0             2.
+N -CT-C -N    1    0.40        180.0            -4.
+N -CT-C -N    1    1.35        180.0            -2.
+N -CT-C -N    1    0.75        180.0             1.
+CT-CT-N -C    1    0.50        180.0            -4.
+CT-CT-N -C    1    0.15        180.0            -3.
+CT-CT-N -C    1    0.53          0.0             1.
+CT-CT-C -N    1    0.100         0.0            -4.
+CT-CT-C -N    1    0.07          0.0             2.
+H -N -C -O    1    2.50        180.0            -2.         JCC,7,(1986),230
+H -N -C -O    1    2.00          0.0             1.         J.C.cistrans-NMA DE
+CT-S -S -CT   1    3.50          0.0            -2.         JCC,7,(1986),230
+CT-S -S -CT   1    0.60          0.0             3.         JCC,7,(1986),230
+OS-CT-CT-OS   1    0.144         0.0            -3.         JCC,7,(1986),230
+OS-CT-CT-OS   1    1.00          0.0             2.         pucker anal (93')
+OS-CT-CT-OH   1    0.144         0.0            -3.         JCC,7,(1986),230
+OS-CT-CT-OH   1    1.00          0.0             2.         pucker anal (93')
+OH-CT-CT-OH   1    0.144         0.0            -3.         JCC,7,(1986),230
+OH-CT-CT-OH   1    1.00          0.0             2.         check glicolWC? puc
+OH-P -OS-CT   1    0.25          0.0            -3.         JCC,7,(1986),230
+OH-P -OS-CT   1    1.20          0.0             2.         gg&gt ene.631g*/mp2
+OS-P -OS-CT   1    0.25          0.0            -3.         JCC,7,(1986),230
+OS-P -OS-CT   1    1.20          0.0             2.         gg&gt ene.631g*/mp2
+OS-P -N -H    1    0.25          0.0            -3.0        YV, DRL NA-AA Linker
+OS-P -N -H    1    1.20          0.0             2.         YV, DRL NA-AA Linker
+OS-P -N -CT   1    0.25          0.0            -3.         YV, DRL NA-AA Linker
+OS-P -N -CT   1    1.20          0.0             2.         YV, DRL NA-AA Linker
+O2-P -N -H    1    0.25          0.0            -3.0        YV, DRL NA-AA Linker
+O2-P -N -H    1    1.20          0.0             2.         YV, DRL NA-AA Linker
+O2-P -N -CT   1    0.25          0.0            -3.         YV, DRL NA-AA Linker
+O2-P -N -CT   1    1.20          0.0             2.         YV, DRL NA-AA Linker
+OS-CT-N*-CK   1    0.50        180.0            -2.         sugar frag calc (PC)
+OS-CT-N*-CK   1    2.50          0.0             1.         sugar frag calc (PC)
+OS-CT-N*-CM   1    0.50        180.0            -2.         sugar frag calc (PC)
+OS-CT-N*-CM   1    2.50          0.0             1.         sugar frag calc (PC)
+X -CZ-CZ-X    1    0.0           0.0             1.         acetilen,YV
+X -CT-CZ-X    3    0.0           0.0             3.         acetilen
+X -C -N2-X    4   10.00        180.0             2.         KEToconazole, YV   
+CA-N -N -N    2    0.0         180.0             2.         YV, C-N=N=N
+$END
+#
+#TORSIMPR(amber6) 
+X -X -C -O          10.5         180.          2.           JCC,7,(1986),230
+X -O2-C -O2         10.5         180.          2.           JCC,7,(1986),230
+X -X -N -H          1.0          180.          2.           JCC,7,(1986),230
+X -X -N2-H          1.0          180.          2.           JCC,7,(1986),230
+X -X -NA-H          1.0          180.          2.           JCC,7,(1986),230
+X -N2-CA-N2         10.5         180.          2.           JCC,7,(1986),230
+X -CT-N -CT         1.0          180.          2.           JCC,7,(1986),230
+X -X -CA-HA         1.1          180.          2.           bsd.on C6H6 nmodes
+X -X -CW-H4         1.1          180.          2.
+X -X -CR-H5         1.1          180.          2.
+X -X -CV-H4         1.1          180.          2.
+X -X -CQ-H5         1.1          180.          2.
+X -X -CK-H5         1.1          180.          2.
+X -X -CM-H4         1.1          180.          2.
+X -X -CM-HA         1.1          180.          2.
+X -X -CA-H4         1.1          180.          2.           bsd.on C6H6 nmodes 
+X -X -CA-H5         1.1          180.          2.           bsd.on C6H6 nmodes
+CK-CB-N*-CT         1.0          180.          2.
+CM-C -N*-CT         1.0          180.          2.           dac guess, 9/94
+CM-C -CM-CT         1.1          180.          2. 
+CT-O -C -OH         10.5         180.          2.
+NA-CV-CC-CT         1.1          180.          2. 
+NB-CW-CC-CT         1.1          180.          2. 
+NA-CW-CC-CT         1.1          180.          2. 
+CW-CB-C*-CT         1.1          180.          2. 
+CA-CA-CA-CT         1.1          180.          2. 
+C -CM-CM-CT         1.1          180.          2.           dac guess, 9/94
+NC-CM-CA-N2         1.1          180.          2.           dac guess, 9/94
+CB-NC-CA-N2         1.1          180.          2.           dac, 10/94
+NA-NC-CA-N2         1.1          180.          2.           dac, 10/94
+CA-CA-C -OH         1.1          180.          2. 
+#$END
+#
+$VDWPAR
+#MOD4        Rmin/2(A)     E(kcal/m)
+1   H           0.6000  0.0157            !Ferguson base pair geom.
+2   HO          0.6000  0.0157            !YV! bilo 0.0 0.0 - OPLS Jorgensen, JACS,110,(1988),1657
+3   HS          0.6000  0.0157             W. Cornell CH3SH --> CH3OH FEP
+4   HC          1.4870  0.0157             OPLS
+5   H1          1.3870  0.0157             Veenstra et al JCC,8,(1992),963 
+6   H2          1.2870  0.0157             Veenstra et al JCC,8,(1992),963 
+7   H3          1.1870  0.0157             Veenstra et al JCC,8,(1992),963 
+8   HP          1.1000  0.0157             Veenstra et al JCC,8,(1992),963
+9   HA          1.4590  0.0150             Spellmeyer 
+10  H4          1.4090  0.0150             Spellmeyer, one electrowithdr. neighbor
+11  H5          1.3590  0.0150             Spellmeyer, two electrowithdr. neighbor
+12  HW          0.0000  0.0000             TIP3P water model
+13  O           1.6612  0.2100             OPLS
+14  O2          1.6612  0.2100             OPLS
+15  OW          1.7683  0.1520             TIP3P water model
+16  OH          1.7210  0.2104             OPLS 
+17  OS          1.6837  0.1700             OPLS ether
+18  CT          1.9080  0.1094             Spellmeyer
+19  CA          1.9080  0.0860             Spellmeyer
+20  CB          1.9080  0.0860             Spellmeyer
+21  CC          1.9080  0.0860             Spellmeyer
+22  CK          1.9080  0.0860             Spellmeyer
+23  CM          1.9080  0.0860             Spellmeyer
+24  CN          1.9080  0.0860             Spellmeyer
+25  CQ          1.9080  0.0860             Spellmeyer
+26  CR          1.9080  0.0860             Spellmeyer
+27  CT          1.9080  0.0860             Spellmeyer
+28  CV          1.9080  0.0860             Spellmeyer
+29  CW          1.9080  0.0860             Spellmeyer
+30  C*          1.9080  0.0860             Spellmeyer
+31  C           1.9080  0.0860             OPLS
+32  N           1.8240  0.1700             OPLS
+33  NA          1.8240  0.1700             OPLS
+34  NB          1.8240  0.1700             OPLS
+35  NC          1.8240  0.1700             OPLS
+36  N2          1.8240  0.1700             OPLS
+37  N3          1.8240  0.1700             OPLS
+38  N*          1.8240  0.1700             OPLS
+39  S           2.0000  0.2500             W. Cornell CH3SH and CH3SCH3 FEP's
+40  SH          2.0000  0.2500             W. Cornell CH3SH and CH3SCH3 FEP's
+41  P           2.1000  0.2000             JCC,7,(1986),230; 
+42  IM          2.47    0.1                Cl- Smith & Dang, JCP 1994,100:5,3757
+43  Li          1.1370  0.0183             Li+ Aqvist JPC 1990,94,8021. (adapted)
+44  IP          1.8680  0.00277            Na+ Aqvist JPC 1990,94,8021. (adapted)
+45  K           2.6580  0.000328           K+  Aqvist JPC 1990,94,8021. (adapted)
+46  Rb          2.9560  0.00017            Rb+ Aqvist JPC 1990,94,8021. (adapted)
+47  Cs          3.3950  0.0000806          Cs+ Aqvist JPC 1990,94,8021. (adapted)
+48  I           2.35    0.40               JCC,7,(1986),230;  
+49  F           1.75    0.061              Gough et al. JCC 13,(1992),963.
+50  IB          3.5     0.270              solvated ion NA+ for vacuum approximation
+51  FE          1.0     0.0                FE, HEM gromos96
+52  CL          2.091   0.2739             CL , gromos96
+53  CLM         2.368   0.1632             CL-, gromos96
+54  CZ          1.9080  0.0860             acetilen, YV
+55  ZN          1.0725  0.250              ZN+2 Proteins:23:12-31(1995) Stote R.,Karplus M.
+56  MG          1.0725  0.250              similar to ZN+2 of Stote R.,Karplus M. (1995)
+57  CAL         1.09    0.27               YV
+# 
+$END
+#
+$HBOND128
+ATHX_N   4
+#        1   2   3   4
+ATHX_L  H   HO  HS  HW
+ATYY_N   7
+#        1   2   3   4   5   6   7
+ATYY_L  O   O2  OH  OS  NB  NC  OW
+#Y-HX   Hn  Ym Rmin(A)   Em(kcal/m) : vdw 12-8
+#aaaaaiiiiIIIIxffffffffffFFFFFFFFFF
+HBPAR    1   1 2.050000  2.5000
+HBPAR    1   2 2.050000  2.5000
+HBPAR    1   3 2.100000  2.5000
+HBPAR    1   4 2.050000  1.5000
+HBPAR    1   5 2.150000  2.0000
+HBPAR    1   6 2.150000  2.0000
+HBPAR    1   7 2.000000  2.0000
+HBPAR    2   1 2.050000  2.5000
+HBPAR    2   2 2.050000  2.5000
+HBPAR    2   3 2.100000  2.5000
+HBPAR    2   4 2.050000  1.5000
+HBPAR    2   5 2.150000  2.0000
+HBPAR    2   6 2.150000  2.0000
+HBPAR    2   7 2.000000  2.0000
+HBPAR    3   1 2.050000  2.5000
+HBPAR    3   2 2.050000  2.5000
+HBPAR    3   3 2.100000  2.5000
+HBPAR    3   4 2.050000  1.5000
+HBPAR    3   5 2.150000  2.0000
+HBPAR    3   6 2.150000  2.0000
+HBPAR    3   7 2.000000  1.5000
+HBPAR    4   1 2.050000  2.5000
+HBPAR    4   2 2.050000  2.5000
+HBPAR    4   3 2.100000  2.5000
+HBPAR    4   4 2.050000  1.5000
+HBPAR    4   5 2.150000  2.0000
+HBPAR    4   6 2.150000  2.0000
+HBPAR    4   7 2.000000  2.0000
+$END
+#END

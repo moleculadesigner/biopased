@@ -1,0 +1,844 @@
+!h_tag.dat : Htag Hnames  :Charged & NeutralResidues
+! amber94 ff names
+!atom res rnum chnum     T  : atom is defined by 4 characters
+!(A6,A4,A4,A1,i2,4X,3a6,3a6) + Hnames + jAt kA lAtname
+!atom resRnum Htype    Tag
+!234**1234****aII****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!A4,2x,A4,A4,A4,A1:i2,4x,3(A4,2x),3(A4,2x) ! table format
+!234561234123412341ii****123412341234123412341234
+!Anm**TermRnamRnmbCTy****aaaaaabbbbbbccccccddddddeeeeeeffffff
+N     NT            3    H1    H2    H3    CA    C            
+NTn                 7    HTn1  HTn2        CA    C             
+OTn2                4    HTOn              CA    CT             
+OTn2                4    HTOn              CA    CTn            
+#
+!CA for termninal and internal residues: Ionized and Neutral protein
+CA                  1    HA                N     C     CB     
+CA    NT            1    HA                N     C     CB     
+CA    NTn           1    HA                N     C     CB
+CA    CT            1    HA                N     C     CB     
+#
+!CA special for GLY
+N         GLY       5    H                 CA    C-1         
+N     NT  GLY       3    H1    H2    H3    CA    C            
+CA        GLY       2    HA2   HA3         N     C              
+CA    NT  GLY       2    HA2   HA3         N     C
+CA    NTn GLY       2    HA2   HA3         NTn   C             
+CA    CT  GLY       2    HA2   HA3         N     CT             
+#
+N         ALA       5    H                 CA    C-1              
+N     NT  ALA       3    H1    H2    H3    CA    C            
+CB        ALA       3    HB1   HB2   HB3   CA    N     C      
+#
+N         VAL       5    H                 CA    C-1         
+N     NT  VAL       3    H1    H2    H3    CA    C            
+CB        VAL       1    HB                CA    CG1   CG2     
+CG1       VAL       3    HG11  HG12  HG13  CB    CA    CG2    
+CG2       VAL       3    HG21  HG22  HG23  CB    CA    CG1   
+!2345612345678
+N         PHE       5    H                 CA    C-1   
+N     NT  PHE       3    H1    H2    H3    CA    C            
+CB        PHE       2    HB2   HB3         CA    CG           
+CD1       PHE       5    HD1               CG    CE1          
+CD2       PHE       5    HD2               CG    CE2           
+CE1       PHE       5    HE1               CD1   CZ            
+CE2       PHE       5    HE2               CD2   CZ              
+CZ        PHE       5    HZ                CE1   CE2               
+#
+N     NT  PRO       2    H2    H3          CA    CD           
+CB        PRO       2    HB2   HB3         CA    CG           
+CG        PRO       2    HG2   HG3         CB    CD          
+CD        PRO       2    HD2   HD3         N     CG          
+#
+N         MET       5    H                 CA    C-1      
+N     NT  MET       3    H1    H2    H3    CA    C            
+CB        MET       2    HB2   HB3         CA    CG            
+CG        MET       2    HG2   HG3         CB    SD            
+CE        MET       3    HE1   HE2   HE3   SD    CG            
+# 
+N         ILE       5    H                 CA    C-1           
+N     NT  ILE       3    H1    H2    H3    CA    C            
+CB        ILE       1    HB                CA    CG1   CG2       
+CG1       ILE       2    HG12  HG13        CB    CD1          
+CG2       ILE       3    HG21  HG22  HG23  CB    CA          
+CD1       ILE       3    HD11  HD12  HD13  CG1   CB           
+#  
+N         LEU       5    H                 CA    C-1          
+N     NT  LEU       3    H1    H2    H3    CA    C            
+CB        LEU       2    HB2   HB3         CA    CG          
+CG        LEU       1    HG                CB    CD1   CD2      
+CD1       LEU       3    HD11  HD12  HD13  CG    CB             
+CD2       LEU       3    HD21  HD22  HD23  CG    CB             
+# 
+N         ASP       5    H                 CA    C-1            
+N     NT  ASP       3    H1    H2    H3    CA    C            
+CB        ASP       2    HB2   HB3         CA    CG          
+# 
+N         ASPn      5    H                 CA    C-1        
+N     NT  ASPn      6    H1    H2          CA    C            
+CB        ASPn      2    HB2   HB3         CA    CG         
+OD2       ASPn      4    HD2               CG    CB          
+#
+N         GLU       5    H                 CA    C-1         
+N     NT  GLU       3    H1    H2    H3    CA    C            
+CB        GLU       2    HB2   HB3         CA    CG         
+CG        GLU       2    HG2   HG3         CB    CD        
+#
+N         GLUn      5    H                 CA    C-1       
+N     NT  GLUn      6    H1    H2          CA    C            
+CB        GLUn      2    HB2   HB3         CA    CG        
+CG        GLUn      2    HG2   HG3         CB    CD        
+OE2       GLUn      4    HE2               CD    CG         
+#
+N         LYS       5    H                 CA    C-1         
+N     NT  LYS       3    H1    H2    H3    CA    C            
+CB        LYS       2    HB2   HB3         CA    CG          
+CG        LYS       2    HG2   HG3         CB    CD          
+CD        LYS       2    HD2   HD3         CG    CE          
+CE        LYS       2    HE2   HE3         NZ    CD           
+NZ        LYS       3    HZ1   HZ2   HZ3   CE    CD           
+#
+N         LYSn      5    H                 CA    C-1         
+N     NT  LYSn      6    H1    H2          CA    C            
+CB        LYSn      2    HB1   HB2         CA    CG           
+CG        LYSn      2    HG1   HG2         CB    CD           
+CD        LYSn      2    HD1   HD2         CG    CE           
+CE        LYSn      2    HE1   HE2         NZ    CD           
+NZ        LYSn      7    HZ1   HZ2         CE    CD           
+#
+N         ARG       5    H                 CA    C-1          
+N     NT  ARG       3    H1    H2    H3    CA    C            
+CB        ARG       2    HB2   HB3         CA    CG           
+CG        ARG       2    HG2   HG3         CB    CD           
+CD        ARG       2    HD2   HD3         CG    NE          
+NE        ARG       5    HE                CD    CZ          
+NH1       ARG       6    HH11  HH12        CZ    NE          
+NH2       ARG       6    HH21  HH22        CZ    NE          
+#
+N         ARGn      5    HN                CA    C-1        
+N     NT  ARGn      6    H1    H2          CA    C            
+CB        ARGn      2    HB1   HB2         CA    CG         
+CG        ARGn      2    HG1   HG2         CB    CD        
+CD        ARGn      2    HD1   HD2         CG    NE         
+NE        ARGn      5    HE                CD    CZ          
+NH1       ARGn     40    HH11              CZ    NE        
+NH2       ARGn      6    HH21  HH22        CZ    NE          
+#
+N         SER       5    H                 CA    C-1        
+N     NT  SER       3    H1    H2    H3    CA    C            
+CB        SER       2    HB2   HB3         CA    OG          
+OG        SER       4    HG                CB    CA          
+#
+N         THR       5    H                 CA    C-1           
+N     NT  THR       3    H1    H2    H3    CA    C            
+CB        THR       1    HB                CA    CG2   OG1       
+CG2       THR       3    HG21  HG22  HG23  CB    CA          
+OG1       THR       4    HG1               CB    CA         
+#
+N         TYR       5    H                 CA    C-1              
+N     NT  TYR       3    H1    H2    H3    CA    C            
+CB        TYR       2    HB2   HB3         CA    CG            
+CD1       TYR       5    HD1               CG    CE1         
+CD2       TYR       5    HD2               CG    CE2         
+CE1       TYR       5    HE1               CZ    CD1         
+CE2       TYR       5    HE2               CZ    CD2          
+OH        TYR       4    HH                CZ    CE1           
+#
+N         TYRn      5    H                 CA    C-1              
+CB        TYRn      2    HB2   HB3         CA    CG            
+CD1       TYRn      5    HD1               CG    CE1         
+CD2       TYRn      5    HD2               CG    CE2          
+CE1       TYRn      5    HE1               CZ    CD1         
+CE2       TYRn      5    HE2               CZ    CD2          
+OH        TYRn      4    HO                CZ    CE1           
+#HIS +
+N         HIS       5    H                 CA    C-1             
+CB        HIS       2    HB2   HB3         CA    CG         
+ND1       HIS       5    HD1               CG    CE1         
+CD2       HIS       5    HD2               CG    NE2          
+CE1       HIS       5    HE1               ND1   NE2           
+NE2       HIS       5    HE2               CD2   CE1           
+#HIS+, amber
+N         HIP       5    H                 CA    C-1
+N     NT  HIP       3    H1    H2    H3    CA    C            
+CB        HIP       2    HB2   HB3         CA    CG
+ND1       HIP       5    HD1               CG    CE1
+CD2       HIP       5    HD2               CG    NE2
+CE1       HIP       5    HE1               ND1   NE2
+NE2       HIP       5    HE2               CD2   CE1
+#HIS neutral - ND1 has H  It Is MAIN neutral His
+##N         HISn      5    H                 CA    C-1           
+##N     NT  HISn      3    H1    H2    H3    CA    C            
+##CB        HISn      2    HB2   HB3         CA    CG           
+##ND1       HISn      5    HD1               CG    CE1         
+##CD2       HISn      5    HD2               CG    NE2            
+##CE1       HISn      5    HE1               ND1   NE2         
+# HIS neutral, ND1 has H  It Is MAIN neutral His 
+N         HID       5    H                 CA    C-1
+N     NT  HID       3    H1    H2    H3    CA    C            
+CB        HID       2    HB2   HB3         CA    CG
+ND1       HID       5    HD1               CG    CE1
+CD2       HID       5    HD2               CG    NE2
+CE1       HID       5    HE1               ND1   NE2
+# HIS neutral, NE2 has H.It is second, minor, tautomer
+N         HIE       5    H                 CA    C-1
+N     NT  HIE       3    H1    H2    H3    CA    C            
+CB        HIE       2    HB2   HB3         CA    CG
+CD2       HIE       5    HD2               CG    NE2
+CE1       HIE       5    HE1               ND1   NE2
+NE2       HIE       5    HE2               CD2   CE1
+#
+N         CYS       5    H                 CA    C-1          
+N     NT  CYS       3    H1    H2    H3    CA    C            
+CB        CYS       2    HB2   HB3         CA    SG          
+SG        CYS       1    HG                CB    CA         
+# CYS from S-S bridge, amber
+N         CYX       5    H                 CA    C-1            
+N     NT  CYX       3    H1    H2    H3    CA    C            
+CB        CYX       2    HB2   HB3         CA    SG          
+# CYS -, amber
+N         CYM       5    H                 CA    C-1            
+N     NT  CYM       3    H1    H2    H3    CA    C            
+CB        CYM       2    HB2   HB3         CA    SG          
+SG        CYM       1    HG                CB    CA         
+#
+N         ASN       5    H                 CA    C-1          
+N     NT  ASN       3    H1    H2    H3    CA    C            
+CB        ASN       2    HB2   HB3         CA    CG          
+ND2       ASN       6    HD21  HD22        CG    CB    OD1  
+#
+N         GLN       5    H                 CA    C-1         
+N     NT  GLN       3    H1    H2    H3    CA    C            
+CB        GLN       2    HB2   HB3         CA    CG         
+CG        GLN       2    HG2   HG3         CB    CD        
+NE2       GLN       6    HE21  HE22        CD    CG    OE1     
+#
+N         TRP       5    H                 CA    C-1         
+N     NT  TRP       3    H1    H2    H3    CA    C            
+CB        TRP       2    HB2   HB3         CA    CG          
+CD1       TRP       5    HD1               CG    NE1         
+NE1       TRP       5    HE1               CD1   CE2         
+CZ2       TRP       5    HZ2               CE2   CH2         
+CH2       TRP       5    HH2               CZ2   CZ3          
+CZ3       TRP       5    HZ3               CH2   CE3         
+CE3       TRP       5    HE3               CZ3   CD2         
+#
+#endAA
+#WATER
+!Anm**TermRnamRnmbCTy****aaaaaabbbbbbccccccddddddeeeeeeffffff 
+O         HOH       8    H1    H2         
+!h_tag.dat : Htag Hnames  :Charged & NeutralResidues
+! heme
+! amber94 ff names
+!atom res rnum chnum     T  : atom is defined by 4 characters
+!(A6,A4,A4,A1,i2,4X,3a6,2a6) + Hnames + jAt kA lAtname
+!atom resRnum Htype    Tag
+!234**1234****aII****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!A4,2x,A4,A4,A4,A1:i2,4x,3(A4,2x),3(A4,2x) ! table format
+!Anm**TermRnamRnmbCTy****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!HEM
+CMA       HEM       3    HMA1  HMA2  HMA3  CA3   CA2
+CHB       HEM       5    HHB               CA4   C1B
+CMB       HEM       3    HMB1  HMB2  HMB3  C2B   C1B
+CAB       HEM       5    HAB               C3B   CBB
+CBB       HEM       7    HBB1  HBB2        CAB   C3B
+CHC       HEM       5    HHC               C4B   C1C
+CMC       HEM       3    HMC1  HMC2  HMC3  C1C   C2C
+CAC       HEM       5    HAC               C3C   CBC
+CBC       HEM       7    HBC1  HBC2        CAC   C3C
+CHD       HEM       5    HHD               C4C   C1D
+CMD       HEM       3    HMD1  HMD2  HMD3  C2D   C1D
+CAD       HEM       2    HAD1  HAD2        C3D   CBD
+CBD       HEM       2    HBD1  HBD2        CAD   CGD
+CHA       HEM       5    HHA               C4D   C1A
+CAA       HEM       2    HAA1  HAA2        C2A   CBA
+CBA       HEM       2    HBA1  HBA2        CAA   CGA
+#hemEND
+!h_tag.dat : Htag Hnames  :Charged & NeutralResidues
+! amber94 ff names
+!atom res rnum chnum     T  : atom is defined by 4 characters
+!(A6,A4,A4,A1,i2,4X,3a6,2a6) + Hnames + jAt kA lAtname
+!atom resRnum Htype    Tag
+!234**1234****aII****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!A4,2x,A4,A4,A4,A1:i2,4x,3(A4,2x),3(A4,2x) ! table format
+!234561234123412341ii****123412341234123412341234
+!Anm**TermRnamRnmbCTg****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!DA3
+C5'       DA3       2    H5'1  H5'2        O5'   C4'
+C4'       DA3       1    H4'               C5'   O4'   C3'
+C1'       DA3       1    H1'               O4'   C2'   N9
+C8        DA3       5    H8                N9    N7
+N6        DA3       6    H61   H62         C6    C5
+C2        DA3       5    H2                N1    N3
+C3'       DA3       1    H3'               C2'   C4'   O3'
+C2'       DA3       2    H2'1  H2'2        C1'   C3'
+O3'       DA3       4    H3T               C3'   C4'
+!
+!DA5
+C5'       DA5       2    H5'1  H5'2        O5'   C4'
+C4'       DA5       1    H4'               C5'   O4'   C3'
+C1'       DA5       1    H1'               O4'   C2'   N9
+C8        DA5       5    H8                N9    N7
+N6        DA5       6    H61   H62         C6    C5
+C2        DA5       5    H2                N1    N3
+C3'       DA5       1    H3'               C2'   C4'   O3'
+C2'       DA5       2    H2'1  H2'2        C1'   C3'
+O5'       DA5       4    H5T               C5'   C4'
+!
+!DA
+C5'       DA        2    H5'1  H5'2        O5'   C4'
+C4'       DA        1    H4'               C5'   O4'   C3'
+C1'       DA        1    H1'               O4'   C2'   N9
+C8        DA        5    H8                N9    N7
+N6        DA        6    H61   H62         C6    C5
+C2        DA        5    H2                N1    N3
+C3'       DA        1    H3'               C2'   C4'   O3'
+C2'       DA        2    H2'1  H2'2        C1'   C3'
+!
+! DAMirror : NEW! nucleotide Nikita-K. -12.2016
+C5'       DAM       2    H5'1  H5'2        O5'   C4'
+C4'       DAM       1    H4'               C5'   O4'   C3'
+C1'       DAM       1    H1'               O4'   C2'   N9
+C8        DAM       5    H8                N9    N7
+N6        DAM       6    H61   H62         C6    C5
+C2        DAM       5    H2                N1    N3
+C3'       DAM       1    H3'               C2'   C4'   O3'
+C2'       DAM       2    H2'1  H2'2        C1'   C3'
+#
+# DAE -NEW!-dec.2016: Nikita-K.: 1,N6-eteno-Adenine
+C5'       DAE       2    H5'1  H5'2        O5'   C4'
+C4'       DAE       1    H4'               C5'   O4'   C3'
+C1'       DAE       1    H1'               O4'   C2'   N9
+C8        DAE       5    H8                N9    N7
+C9        DAE       5    H9                N6    C11
+C10       DAE       5    H10               C9    N1
+C2        DAE       5    H2                N1    N3
+C3'       DAE       1    H3'               C2'   C4'   O3'
+C2'       DAE       2    H2'1  H2'2        C1'   C3'
+#
+# FPI - dRibose, no nucleic base
+C5'       FPI       2    H5'1  H5'2        O5'   C4'
+C4'       FPI       1    H4'               C5'   O4'   C3'
+C1'       FPI       2    H1'1  H1'2        O4'   C2'   
+C3'       FPI       1    H3'               C2'   C4'   O3'
+C2'       FPI       2    H2'1  H2'2        C1'   C3'
+#
+#!END GROUP
+!DAN D-ADENOSINE - with 5' - OH group and 3' - OH group 
+C5'       DAN       2    H5'1  H5'2        O5'   C4'
+C4'       DAN       1    H4'               C5'   O4'   C3'
+C1'       DAN       1    H1'               O4'   C2'   N9
+C8        DAN       5    H8                N9    N7
+N6        DAN       6    H61   H62         C6    C5
+C2        DAN       5    H2                N1    N3
+C3'       DAN       1    H3'               C2'   C4'   O3'
+C2'       DAN       2    H2'1  H2'2        C1'   C3'
+O5'       DAN       4    H5T               C5'   C4'
+O3'       DAN       4    H3T               C3'   C4'
+!
+!RA5
+C5'       RA5       2    H5'1  H5'2        O5'   C4'
+C4'       RA5       1    H4'               C5'   O4'   C3'
+C1'       RA5       1    H1'               O4'   C2'   N9
+C8        RA5       5    H8                N9    N7
+N6        RA5       6    H61   H62         C6    C5
+C2        RA5       5    H2                N1    N3
+C3'       RA5       1    H3'               C2'   C4'   O3'
+C2'       RA5       1    H2'1              C1'   C3'   O2'
+O5'       RA5       4    H5T               C5'   C4'
+O2'       RA5       4    HO'2              C2'   C3'
+!
+!RAN R-ADENOSINE - with 5' - OH group and 3' - OH group 
+C5'       RAN       2    H5'1  H5'2        O5'   C4'
+C4'       RAN       1    H4'               C5'   O4'   C3'
+C1'       RAN       1    H1'               O4'   C2'   N9
+C8        RAN       5    H8                N9    N7
+N6        RAN       6    H61   H62         C6    C5
+C2        RAN       5    H2                N1    N3
+C3'       RAN       1    H3'               C2'   C4'   O3'
+C2'       RAN       1    H2'1              C1'   C3'   O2'
+O5'       RAN       4    H5T               C5'   C4'
+O3'       RAN       4    H3T               C3'   C4'  
+O2'       RAN       4    HO'2              C2'   C3'
+!
+!RA3
+C5'       RA3       2    H5'1  H5'2        O5'   C4'
+C4'       RA3       1    H4'               C5'   O4'   C3'
+C1'       RA3       1    H1'               O4'   C2'   N9
+C8        RA3       5    H8                N9    N7
+N6        RA3       6    H61   H62         C6    C5
+C2        RA3       5    H2                N1    N3
+C3'       RA3       1    H3'               C2'   C4'   O3'
+C2'       RA3       1    H2'1              C1'   C3'   O2'
+O3'       RA3       4    H3T               C3'   C4'
+O2'       RA3       4    HO'2              C2'   C3'
+!
+!RA
+C5'       RA        2    H5'1  H5'2        O5'   C4'
+C4'       RA        1    H4'               C5'   O4'   C3'
+C1'       RA        1    H1'               O4'   C2'   N9
+C8        RA        5    H8                N9    N7
+N6        RA        6    H61   H62         C6    C5
+C2        RA        5    H2                N1    N3
+C3'       RA        1    H3'               C2'   C4'   O3'
+C2'       RA        1    H2'1              C1'   C3'   O2'
+O2'       RA        4    HO'2              C2'   C3'
+!
+!1MA  N1-methyl Ade 1MA 6-HYDRO-1-METHYLADENOSINE-5'-MONOPHOSPHATE 
+C5'       1MA       2    H5'1  H5'2        O5'   C4'
+C4'       1MA       1    H4'               C5'   O4'   C3'
+C1'       1MA       1    H1'               O4'   C2'   N9
+C8        1MA       5    H8                N9    N7
+N6        1MA       6    H61   H62         C6    C5
+C2        1MA       5    H2                N1    N3
+C3'       1MA       1    H3'               C2'   C4'   O3'
+C2'       1MA       1    H2'1              C1'   C3'   O2'
+O2'       1MA       4    HO'2              C2'   C3'
+CM1       1MA       3    HM11  HM12  HM13  N1    C6
+!
+!DC5 - D-CYTOSINE - with 5' - OH end group and 3' - O(minus) group 
+C5'       DC5       2    H5'1  H5'2        O5'   C4'
+C4'       DC5       1    H4'               C5'   O4'   C3'
+C1'       DC5       1    H1'               O4'   C2'   N1
+C3'       DC5       1    H3'               C2'   C4'   O3'
+C2'       DC5       2    H2'1  H2'2        C1'   C3'
+O5'       DC5       4    H5T               C5'   C4'
+C6        DC5       5    H6                C5    N1
+C5        DC5       5    H5                C4    C6
+N4        DC5       6    H41   H42         C4    C5
+!
+!DC3 - D-CYTOSINE - with 5' - OH end group and 3' - O(minus) group
+C5'       DC3       2    H5'1  H5'2        O5'   C4'
+C4'       DC3       1    H4'               C5'   O4'   C3'
+C1'       DC3       1    H1'               O4'   C2'   N1
+C3'       DC3       1    H3'               C2'   C4'   O3'
+C2'       DC3       2    H2'1  H2'2        C1'   C3'
+O3'       DC3       4    H3T               C3'   C4'
+C6        DC3       5    H6                C5    N1
+C5        DC3       5    H5                C4    C6
+N4        DC3       6    H41   H42         C4    C5
+!
+!DCN - D-CYTOSINE - with 5' - OH group and 3' - OH group
+C5'       DCN       2    H5'1  H5'2        O5'   C4'
+C4'       DCN       1    H4'               C5'   O4'   C3'
+C1'       DCN       1    H1'               O4'   C2'   N1
+C3'       DCN       1    H3'               C2'   C4'   O3'
+C2'       DCN       2    H2'1  H2'2        C1'   C3'
+O5'       DCN       4    H5T               C5'   C4'
+C6        DCN       5    H6                C5    N1
+C5        DCN       5    H5                C4    C6
+N4        DCN       6    H41   H42         C4    C5
+O3'       DCN       4    H3T               C3'   C4'
+!
+!DC - CYTOSINE - with 5' - phosphate group and 3' - O(minus) group
+C5'       DC        2    H5'1  H5'2        O5'   C4'
+C4'       DC        1    H4'               C5'   O4'   C3'
+C1'       DC        1    H1'               O4'   C2'   N1
+C3'       DC        1    H3'               C2'   C4'   O3'
+C2'       DC        2    H2'1  H2'2        C1'   C3'
+C6        DC        5    H6                C5    N1
+C5        DC        5    H5                C4    C6
+N4        DC        6    H41   H42         C4    C5 
+!
+!RC - R-CYTOSINE - with 5' - phosphate group and 3' - O(minus) group 
+C5'       RC        2    H5'1  H5'2        O5'   C4'
+C4'       RC        1    H4'               C5'   O4'   C3'
+C1'       RC        1    H1'               O4'   C2'   N1
+C3'       RC        1    H3'               C2'   C4'   O3'
+C2'       RC        1    H2'1              C1'   C3'   O2'
+C6        RC        5    H6                C5    N1
+C5        RC        5    H5                C4    C6
+N4        RC        6    H41   H42         C4    C5
+O2'       RC        4    HO'2              C2'   C3'
+!
+!RC5 R-CYTOSINE - with 5' - OH end group and 3' - O(minus) group
+C5'       RC5       2    H5'1  H5'2        O5'   C4'
+C4'       RC5       1    H4'               C5'   O4'   C3'
+C1'       RC5       1    H1'               O4'   C2'   N1
+C3'       RC5       1    H3'               C2'   C4'   O3'
+C2'       RC5       1    H2'1              C1'   C3'   O2'
+C6        RC5       5    H6                C5    N1
+C5        RC5       5    H5                C4    C6
+N4        RC5       6    H41   H42         C4    C5
+O2'       RC5       4    HO'2              C2'   C3' 
+O5'       RC5       4    H5T               C5'   C4'
+!
+!RCN  R-CYTOSINE - with 5' - OH end group and 3' - OH end 
+C5'       RCN       2    H5'1  H5'2        O5'   C4'
+C4'       RCN       1    H4'               C5'   O4'   C3'
+C1'       RCN       1    H1'               O4'   C2'   N1
+C3'       RCN       1    H3'               C2'   C4'   O3'
+C2'       RCN       1    H2'1              C1'   C3'   O2'
+C6        RCN       5    H6                C5    N1
+C5        RCN       5    H5                C4    C6
+N4        RCN       6    H41   H42         C4    C5
+O2'       RCN       4    HO'2              C2'   C3' 
+O5'       RCN       4    H5T               C5'   C4'
+O3'       RCN       4    H3T               C3'   C4'
+!  
+!RC3 - R-CYTOSINE - with 5' - phosphate group and 3' - OH group 
+C5'       RC3       2    H5'1  H5'2        O5'   C4'
+C4'       RC3       1    H4'               C5'   O4'   C3'
+C1'       RC3       1    H1'               O4'   C2'   N1
+C3'       RC3       1    H3'               C2'   C4'   O3'
+C2'       RC3       1    H2'1              C1'   C3'   O2'
+C6        RC3       5    H6                C5    N1
+C5        RC3       5    H5                C4    C6
+N4        RC3       6    H41   H42         C4    C5
+O3'       RC3       4    H3T               C3'   C4' 
+O2'       RC3       4    HO'2              C2'   C3' 
+!
+!5MC - R-5-METHYLCYTIDINE-5'-MONOPHOSPHATE and 3' - O(minus) group
+C5'       5MC       2    H5'1  H5'2        O5'   C4'
+C4'       5MC       1    H4'               C5'   O4'   C3'
+C1'       5MC       1    H1'               O4'   C2'   N1
+C3'       5MC       1    H3'               C2'   C4'   O3'
+C2'       5MC       1    H2'1              C1'   C3'   O2'
+C6        5MC       5    H6                C5    N1
+N4        5MC       6    H41   H42         C4    C5
+CM5       5MC       3    HM51  HM52  HM53  C5    C6  
+O2'       5MC       4    HO'2              C2'   C3'    
+!
+!R-OMC-O2'-METHYLYCYTIDINE-5'-MONOPHOSPHATE  3' - O(minus) group 
+C5'       OMC       2    H5'1  H5'2        O5'   C4'
+C4'       OMC       1    H4'               C5'   O4'   C3'
+C1'       OMC       1    H1'               O4'   C2'   N9
+C3'       OMC       1    H3'               C2'   C4'   O3'
+C2'       OMC       1    H2'1              C1'   C3'   O2'
+C6        OMC       5    H6                C5    N1
+C5        OMC       5    H5                C4    C6
+N4        OMC       6    H41   H42         C4    C5
+CM2       OMC       3    HM21  HM22  HM23  O2'   C2'
+!
+!DG5 - D-GUANOSINE - with 5' - OH end group and 3' - O(minus) group 
+C5'       DG5       2    H5'1  H5'2        O5'   C4'
+C4'       DG5       1    H4'               C5'   O4'   C3'
+C1'       DG5       1    H1'               O4'   C2'   N9
+C3'       DG5       1    H3'               C2'   C4'   O3'
+C2'       DG5       2    H2'1  H2'2        C1'   C3'
+C8        DG5       5    H8                N9    N7
+N1        DG5       5    H1                C6    C2 
+N2        DG5       6    H21   H22         N1    C2
+O5'       DG5       4    H5T               C5'   C4'
+!
+!DG5 - D-GUANOSINE - with 5' - OH end group and 3' - O(minus) group
+C5'       ODG       2    H5'1  H5'2        O5'   C4'
+C4'       ODG       1    H4'               C5'   O4'   C3'
+C1'       ODG       1    H1'               O4'   C2'   N9
+C3'       ODG       1    H3'               C2'   C4'   O3'
+C2'       ODG       2    H2'1  H2'2        C1'   C3'
+N7        ODG       5    H7                C8    C5
+N1        ODG       5    H1                C6    C2
+N2        ODG       6    H21   H22         N1    C2
+!
+!DC3 - D-GUANOSINE - with 5' - phosphate group and 3' - OH group
+C5'       DG3       2    H5'1  H5'2        O5'   C4'
+C4'       DG3       1    H4'               C5'   O4'   C3'
+C1'       DG3       1    H1'               O4'   C2'   N9
+C3'       DG3       1    H3'               C2'   C4'   O3'
+C2'       DG3       2    H2'1  H2'2        C1'   C3'
+C8        DG3       5    H8                N9    N7
+N1        DG3       5    H1                C6    C2
+N2        DG3       6    H21   H22         N1    C2
+O3'       DG3       4    H3T               C3'   C4' 
+!
+!DGN  D-GUANOSINE - with 5' - OH group and 3' - OH group
+C5'       DG3       2    H5'1  H5'2        O5'   C4'
+C4'       DG3       1    H4'               C5'   O4'   C3'
+C1'       DG3       1    H1'               O4'   C2'   N9
+C3'       DG3       1    H3'               C2'   C4'   O3'
+C2'       DG3       2    H2'1  H2'2        C1'   C3'
+C8        DG3       5    H8                N9    N7
+N1        DG3       5    H1                C6    C2
+N2        DG3       6    H21   H22         N1    C2
+O3'       DG3       4    H3T               C3'   C4'
+O5'       DG5       4    H5T               C5'   C4'
+!
+!DG D-GUANOSINE - with 5' - in chain
+C5'       DG        2    H5'1  H5'2        O5'   C4'
+C4'       DG        1    H4'               C5'   O4'   C3'
+C1'       DG        1    H1'               O4'   C2'   N9
+C3'       DG        1    H3'               C2'   C4'   O3'
+C2'       DG        2    H2'1  H2'2        C1'   C3'
+C8        DG        5    H8                N9    N7
+N1        DG        5    H1                C6    C2
+N2        DG        6    H21   H22         N1    C2 
+!
+!RG D-GUANOSINE - with 5' - in chain
+C5'       RG        2    H5'1  H5'2        O5'   C4'
+C4'       RG        1    H4'               C5'   O4'   C3'
+C1'       RG        1    H1'               O4'   C2'   N9
+C3'       RG        1    H3'               C2'   C4'   O3'
+C2'       RG        1    H2'1              C1'   C3'   O2'
+C8        RG        5    H8                N9    N7
+N1        RG        5    H1                C6    C2
+N2        RG        6    H21   H22         N1    C2
+O2'       RG        4    HO'2              C2'   C3' 
+!
+!RG5 - R-GUANOSINE - with 5' - OH end group and 3' - O(minus) group
+C5'       RG5       2    H5'1  H5'2        O5'   C4'
+C4'       RG5       1    H4'               C5'   O4'   C3'
+C1'       RG5       1    H1'               O4'   C2'   N9
+C3'       RG5       1    H3'               C2'   C4'   O3'
+C2'       RG5       1    H2'1              C1'   C3'   O2'
+C8        RG5       5    H8                N9    N7
+N1        RG5       5    H1                C6    C2
+N2        RG5       6    H21   H22         N1    C2
+O5'       RG5       4    H5T               C5'   C4' 
+O2'       RG5       4    HO'2              C2'   C3' 
+!
+!RG3 - R-GUANOSINE - with 5' - phosphate group and 3' - OH group
+C5'       RG3       2    H5'1  H5'2        O5'   C4'
+C4'       RG3       1    H4'               C5'   O4'   C3'
+C1'       RG3       1    H1'               O4'   C2'   N9
+C3'       RG3       1    H3'               C2'   C4'   O3'
+C2'       RG3       1    H2'1              C1'   C3'   O2'
+C8        RG3       5    H8                N9    N7
+N1        RG3       5    H1                C6    C2
+N2        RG3       6    H21   H22         N1    C2
+O3'       RG3       4    H3T               C3'   C4'
+O2'       RG3       4    HO'2              C2'   C3' 
+!
+!RGN - R-GUANOSINE - with 5' - OH group and 3' - OH group 
+C5'       RGN       2    H5'1  H5'2        O5'   C4'
+C4'       RGN       1    H4'               C5'   O4'   C3'
+C1'       RGN       1    H1'               O4'   C2'   N9
+C3'       RGN       1    H3'               C2'   C4'   O3'
+C2'       RGN       1    H2'1              C1'   C3'   O2'
+C8        RGN       5    H8                N9    N7
+N1        RGN       5    H1                C6    C2
+N2        RGN       6    H21   H22         N1    C2
+O3'       RGN       4    H3T               C3'   C4'
+O5'       RGN       4    H5T               C5'   C4' 
+O2'       RGN       4    HO'2              C2'   C3'  
+!
+!2MG 2N-METHYLGUANOSINE-5'-MONOPHOSPHATE (R-GUANOSINE - 5' - phosphate 3' - O(minus) 
+C5'       2MG       2    H5'1  H5'2        O5'   C4'
+C4'       2MG       1    H4'               C5'   O4'   C3'
+C1'       2MG       1    H1'               O4'   C2'   N9
+C3'       2MG       1    H3'               C2'   C4'   O3'
+C2'       2MG       1    H2'1              C1'   C3'   O2'
+C8        2MG       5    H8                N9    N7
+N1        2MG       5    H1                C6    C2
+N2        2MG       5    H21               C2    CM2
+CM2       2MG       3    HM21  HM22  HM23  N2    C2 
+O2'       2MG       4    HO'2              C2'   C3' 
+!
+!M2G 2N-DyMETHYLGUANOSINE-5'-MONOPHOSPHATE (R-GUANOSINE - 5' - phosphate 3' - O(minus) 
+C5'       M2G       2    H5'1  H5'2        O5'   C4'
+C4'       M2G       1    H4'               C5'   O4'   C3'
+C1'       M2G       1    H1'               O4'   C2'   N9
+C3'       M2G       1    H3'               C2'   C4'   O3'
+C2'       M2G       1    H2'1              C1'   C3'   O2'
+C8        M2G       5    H8                N9    N7
+N1        M2G       5    H1                C6    C2
+CM2       M2G       3    HM21  HM22  HM23  N2    C2
+CM1       M2G       3    HM11  HM12  HM13  N2    C2 
+O2'       M2G       4    HO'2              C2'   C3'
+!
+!7MG 7N-METHYL-8-HYDROGUANOSINE-5'-MONOPHOSPHATE - 5' - phosphate 3' - O(minus)
+C5'       7MG       2    H5'1  H5'2        O5'   C4'
+C4'       7MG       1    H4'               C5'   O4'   C3'
+C1'       7MG       1    H1'               O4'   C2'   N9
+C3'       7MG       1    H3'               C2'   C4'   O3'
+C2'       7MG       1    H2'1              C1'   C3'   O2'
+C8        7MG       5    H8                N9    N7
+N1        7MG       5    H1                C6    C2
+N2        7MG       6    H21   H22         N1    C2
+O2'       7MG       4    HO'2              C2'   C3'
+CM7       7MG       3    HM71  HM72  HM73  N7    C8
+!
+!OMG O2'-METHYLGUANOSINE-5'-MONOPHOSPHATE- 3' - O(minus)
+C5'       OMG       2    H5'1  H5'2        O5'   C4'
+C4'       OMG       1    H4'               C5'   O4'   C3'
+C1'       OMG       1    H1'               O4'   C2'   N9
+C3'       OMG       1    H3'               C2'   C4'   O3'
+C2'       OMG       1    H2'1              C1'   C3'   O2'
+C8        OMG       5    H8                N9    N7
+N1        OMG       5    H1                C6    C2
+N2        OMG       6    H21   H22         N1    C2
+CM2       OMG       3    HM21  HM22  HM23  O2'   C2'
+!
+!DT5 D-THYMTNE - with 5' - OH end group and 3' - O(minus)
+C5'       DT5       2    H5'1  H5'2        O5'   C4'
+C4'       DT5       1    H4'               C5'   O4'   C3'
+C1'       DT5       1    H1'               O4'   C2'   N1
+C3'       DT5       1    H3'               C2'   C4'   O3'
+C2'       DT5       2    H2'1  H2'2        C1'   C3'
+C6        DT5       5    H6                C5    N1
+C7        DT5       3    H71   H72   H73   C5    C6
+N3        DT5       5    H3                C4    C2
+O5'       DT5       4    H5T               C5'   C4'
+!
+!DT D-THYMTNE - with 5' - OH end group and 3' - O(minus)
+C5'       DT        2    H5'1  H5'2        O5'   C4'
+C4'       DT        1    H4'               C5'   O4'   C3'
+C1'       DT        1    H1'               O4'   C2'   N1
+C3'       DT        1    H3'               C2'   C4'   O3'
+C2'       DT        2    H2'1  H2'2        C1'   C3'
+C6        DT        5    H6                C5    N1
+C7        DT        3    H71   H72   H73   C5    C6
+N3        DT        5    H3                C4    C2
+!
+!DT5 D-THYMTNE - with 5' - OH end group and 3' - O(minus)
+C5'       DT3       2    H5'1  H5'2        O5'   C4'
+C4'       DT3       1    H4'               C5'   O4'   C3'
+C1'       DT3       1    H1'               O4'   C2'   N1
+C3'       DT3       1    H3'               C2'   C4'   O3'
+C2'       DT3       2    H2'1  H2'2        C1'   C3'
+C6        DT3       5    H6                C5    N1
+C7        DT3       3    H71   H72   H73   C5    C6
+N3        DT3       5    H3                C4    C2
+O3'       DT3       4    H3T               C3'   C4'
+!
+!DTN - D-THYMINE - with 5' - OH group and 3' - OH group
+C5'       DTN       2    H5'1  H5'2        O5'   C4'
+C4'       DTN       1    H4'               C5'   O4'   C3'
+C1'       DTN       1    H1'               O4'   C2'   N1
+C3'       DTN       1    H3'               C2'   C4'   O3'
+C2'       DTN       2    H2'1  H2'2        C1'   C3'
+C6        DTN       5    H6                C5    N1
+C7        DTN       3    H71   H72   H73   C5    C6
+N3        DTN       5    H3                C4    C5
+O3'       DTN       4    H3T               C3'   C4'
+O5'       DTN       4    H5T               C5'   C4'  
+!
+!RU5 R-URACIL - with 5' - OH end group and 3' - O(minus)
+C5'       RU5       2    H5'1  H5'2        O5'   C4'
+C4'       RU5       1    H4'               C5'   O4'   C3'
+C1'       RU5       1    H1'               O4'   C2'   N1
+C3'       RU5       1    H3'               C2'   C4'   O3'
+C2'       RU5       1    H2'1              C1'   C3'   O2'
+O2'       RU5       4    HO'2              C2'   C3'
+N3        RU5       5    H3                C4    C2
+C5        RU5       5    H5                C6    C4
+C6        RU5       5    H6                C5    N1
+O5'       RU5       4    H5T               C5'   C4' 
+!
+!RU3 R-URACIL - with 3' - OH end group and 3' - POO(minus)
+C5'       RU3       2    H5'1  H5'2        O5'   C4'
+C4'       RU3       1    H4'               C5'   O4'   C3'
+C1'       RU3       1    H1'               O4'   C2'   N1
+C3'       RU3       1    H3'               C2'   C4'   O3'
+C2'       RU3       1    H2'1              C1'   C3'   O2'
+O2'       RU3       4    HO'2              C2'   C3'
+N3        RU3       5    H3                C4    C2
+C5        RU3       5    H5                C6    C4
+C6        RU3       5    H6                C5    N1
+O3'       RU3       4    H3T               C3'   C4'
+!
+!RUN R-URACIL - with 3' - OH end group and 3' - OH(minus)
+C5'       RUN       2    H5'1  H5'2        O5'   C4'
+C4'       RUN       1    H4'               C5'   O4'   C3'
+C1'       RUN       1    H1'               O4'   C2'   N1
+C3'       RUN       1    H3'               C2'   C4'   O3'
+C2'       RUN       1    H2'1              C1'   C3'   O2'
+O2'       RUN       4    HO'2              C2'   C3'
+N3        RUN       5    H3                C4    C2
+C5        RUN       5    H5                C6    C4
+C6        RUN       5    H6                C5    N1
+O3'       RUN       4    H3T               C3'   C4'
+O5'       RUN       4    H5T               C5'   C4' 
+!
+!RU R-URACIL - with 5' - P group and 3' - O(minus)
+C5'       RU        2    H5'1  H5'2        O5'   C4'
+C4'       RU        1    H4'               C5'   O4'   C3'
+C1'       RU        1    H1'               O4'   C2'   N1
+C3'       RU        1    H3'               C2'   C4'   O3'
+C2'       RU        1    H2'1              C1'   C3'   O2'
+O2'       RU        4    HO'2              C2'   C3'
+N3        RU        5    H3                C4    C2
+C5        RU        5    H5                C6    C4
+C6        RU        5    H6                C5    N1
+!
+!H2U R-URACIL - with 5' - P group and 3' - O(minus)
+C5'       H2U       2    H5'1  H5'2        O5'   C4'
+C4'       H2U       1    H4'               C5'   O4'   C3'
+C1'       H2U       1    H1'               O4'   C2'   N1
+C3'       H2U       1    H3'               C2'   C4'   O3'
+C2'       H2U       2    H2'1  H2'2        C1'   C3'
+N3        H2U       5    H3                C4    C2
+C5        H2U       2    H51   H52         C6    O4
+C6        H2U       2    H61   H62         C5    N1
+!
+!#5MU-R-URACIL - with 5' - phosphate group and 3' - O(minus) group 
+C5'       5MU       2    H5'1  H5'2        O5'   C4'
+C4'       5MU       1    H4'               C5'   O4'   C3'
+C1'       5MU       1    H1'               O4'   C2'   N1
+C3'       5MU       1    H3'               C2'   C4'   O3'
+C2'       5MU       1    H2'1              C1'   C3'   O2'
+O2'       5MU       4    HO'2              C2'   C3'
+N3        5MU       5    H3                C4    C2
+C6        5MU       5    H6                C5    N1
+C5M       5MU       3    HC51  HC52  HC53  C5    C6
+! 
+!PSU-R-PSU PSEUDOURIDINE-5'-MONOPHOSPHATE and 3' - O(minus) group
+C5'       PSU       2    H5'1  H5'2        O5'   C4'
+C4'       PSU       1    H4'               C5'   O4'   C3'
+C1'       PSU       1    H1'               O4'   C2'   C5
+C3'       PSU       1    H3'               C2'   C4'   O3'
+C2'       PSU       1    H2'1              C1'   C3'   O2'
+O2'       PSU       4    HO'2              C2'   C3'
+N3        PSU       5    H3                C4    C2
+N1        PSU       5    H1                C6    C2
+C6        PSU       5    H6                C5    N1
+!
+!#Y-BASE; 1H-IMIDAZO(1,2-ALPHA)PURINE-7-BUTANOIC ACID 
+C5'       YG        2    H5'1  H5'2        O5'   C4'
+C4'       YG        1    H4'               C5'   O4'   C3'
+C1'       YG        1    H1'               O4'   C2'   N9
+C3'       YG        1    H3'               C2'   C4'   O3'
+C2'       YG        1    H2'1              C1'   C3'   O2'
+C8        YG        5    H8                N9    N7
+O2'       YG        4    HO'2              C2'   C3'
+C3        YG        3    HC31  HC32  HC33  N3    C2 
+C10       YG        3    H101  H102  H103  C11   C12
+C13       YG        2    H131  H132        C12   C14
+C14       YG        2    H141  H142        C13   C15
+C15       YG        1    HC15              C14   C16   N20
+N20       YG        5    HN20              C15   C21
+C19       YG        3    H191  H192  H193  O18   C16
+C24       YG        3    H241  H242  H243  O23   C21
+!endNA
+# LIGANDS
+!h_tag.dat : Htag Hnames  :Charged & NeutralResidues
+! amber94 ff names
+!atom res rnum chnum     T  : atom is defined by 4 characters
+!(A6,A4,A4,A1,i2,4X,3a6,3a6) + Hnames + jAt kA lAtname
+!atom resRnum Htype    Tag
+!234**1234****aII****aaaaaabbbbbbccccccddddddeeeeeeffffff
+!A4,2x,A4,A4,A4,A1:i2,4x,3(A4,2x),3(A4,2x) ! table format
+!234561234123412341ii****123412341234123412341234
+!Anm**TermRnamRnmbCTy****aaaaaabbbbbbccccccddddddeeeeeeffffff
+C2        BEN       5    H2                C1    C3
+C3        BEN       5    H3                C2    C4
+C4        BEN       5    H4                C3    C5
+C5        BEN       5    H5                C4    C6
+C6        BEN       5    H6                C5    C1
+N1        BEN       6    HN11  HN12        C     C1
+N2        BEN       6    HN21  HN22        C     C1
+#endBEN
+# TPF - flucanozole from 1ea1
+!Anm**TermRnamRnmbCTy****aaaaaabbbbbbccccccddddddeeeeeeffffff
+C9        TPF       5    HC9               C8    C10
+C10       TPF       5    HC10              C9    C11
+C12       TPF       5    HC12              C13   C11  
+O         TPF       4    HO                C1    C8
+C2        TPF       2    HC21  HC22        C1    N1
+C5        TPF       2    HC51  HC52        C1    N4
+C3        TPF       5    HC3               N1    N2
+C4        TPF       5    HC4               N3    N2
+C6        TPF       5    HC6               N4    N5
+C7        TPF       5    HC7               N6    N5
+#endTPF
+#PIM - phenilImidazole from 1e9x
+C9        PIM       5    HC9               C8    C10
+C10       PIM       5    HC10              C9    C11
+C7        PIM       5    HC7               C6    C8 
+C8        PIM       5    HC8               C7    C9
+C11       PIM       5    HC11              C6    C10
+C2        PIM       5    HC2               N1    N3
+C4        PIM       5    HC4               C5    N3   
+#endPIM
+#ENDLIG
+end
