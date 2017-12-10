@@ -6,7 +6,7 @@ version=17
 echo "start compilation of $exe_name $version"
 
 echo "compilation at $(pwd)"
-f95 -c *.f
+f95 -c src/*.f
 
 #linking
 echo "linking $(pwd)/*.o"
