@@ -1,0 +1,6 @@
+#t4_moveRes.inp : out of Prot-inserted residues
+aaaaaaIIIIiiii
+#
+MOVRES   1 229                              : Prot
+MOVRES 230 263                              : Dna
+end

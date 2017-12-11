@@ -1,0 +1,22 @@
+#t4_MdynPar.inp
+#234567890123456789012345678901234567890!comment
+#MdynPar.inp for test4
+#234567890123456789012345678901234567890!comment
+$MovingRes                               ! moling Res file t6_moveRes.inp
+$harmAt1PosRst                           ! file t6_restrAt1.inp - harmConst (kcal/A^2)
+$distRestrA2                             ! file t6_distRestrA2.inp
+$Hread                                   ! read H atoms
+$shake=0                                 !0/1/2 : no fixed bonds, fix all bonds, fix all bonds+ val angle
+##$SolvWbrg                                ! define Water bribges
+$SolvGS                                  ! Gaussian SolvModel
+$doMDyn                                  ! do MD run
+$MDSA                                    !do SimAnnealing
+$engCalc                                 !Calc energy for initial PDB
+$engOptim                                ! do Energy Optimiz
+$nOptStep=10                             !max N optim steps
+$initMDTemp=10.00                        ! initial Temp
+$bathMDTemp=50.00                        ! final Tem
+$runMDnstep=20000                        ! number of MD steps
+$mdTimeStep=0.001                        ! MD time step (ps)
+$nwtra=10000                             ! write PDB for each 10000 MDtime step
+#END

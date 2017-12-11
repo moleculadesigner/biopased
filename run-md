@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+
+./biopased -mn hsmug.t -i t4_MdynPar.inp -c hsmug_wt_dna.pdb -mv t4_moveRes.inp   -sa t4_SAprotocol.inp -r t4_restrAt1.inp -d t4_distRestrA2.inp -o hsmug.t.out
+#

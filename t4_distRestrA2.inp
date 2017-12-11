@@ -1,0 +1,11 @@
+#distant restraints ai-aj
+#RESTA2   AtNumb1  AtNumb2  Dist12(A)  hK12 (kcal/A**2)
+#RESTA2     5      2166     20.0       1.0
+#(a6,i6,i6,1x,f6.2,1x,f6.2)
+#aaaaaiiiiiiIIIIIIxffffffxffffff
+#ESTA2     5  2166   20.0    1.0
+RESTA2  2939  4373   3.1     0.25
+RESTA2  3079  3708   3.1     0.25
+RESTA2  2508  3741   3.1     0.25
+end
+# 

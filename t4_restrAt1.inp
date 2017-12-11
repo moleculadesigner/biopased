@@ -1,0 +1,18 @@
+#harmonically restrained RESidue segments
+#xxxxxIIIIiiiiXffffffffxAAAAAAAAAA
+# restrfile - file name with input loopEndRes information
+# #restr residues
+# (6x,2i4,1x,f8.6,1x,a40)
+# 123456789012345678901234567890...
+#         r1- r2  Kharm   atomList
+#
+##RESTAT   1   4  0.001   NAB         :NuclAcidBaseAtoms are Restrained
+##RESTAT   1 219  1.0     PBB CA      :ProtBackBone CA
+##RESTAT   1  16  0.5     ALL         : ALL atoms
+##RESTAT  47  59  0.05                : ALL atoms
+#xxxxxIIIIiiiixffffffffxAAAAAAAAAA
+RESTAT   1 229    0.05                 : All atoms: Prot 
+RESTAT 230 250    0.025                : Dna
+RESTAT 251 253    0.05                 : Dna inserted in Prot
+RESTAT 254 263    0.025                : Dna
+end
